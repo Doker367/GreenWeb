@@ -1,0 +1,25 @@
+# robots.txt para GreenAlgorithm
+# Permitir acceso a todos los rastreadores
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos sensibles (si los tienes)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Indicar la ubicación del sitemap
+Sitemap: https://greenalgorithm.com.mx/sitemap.xml
+
+# Velocidad de rastreo (crawl-delay en segundos)
+# Solo para bots específicos si es necesario
+# Crawl-delay: 1
+
+# Googlebot específico
+User-agent: Googlebot
+Allow: /
+
+# Bingbot específico
+User-agent: Bingbot
+Allow: /
