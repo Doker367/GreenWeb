@@ -144,7 +144,7 @@ function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <motion.a
-            href="#cta"
+            href="#contact"
             className="btn-primary text-lg px-8 py-4 glow-effect-hover"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

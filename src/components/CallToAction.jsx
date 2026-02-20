@@ -51,11 +51,11 @@ function CallToAction() {
           <FadeInView direction="up" delay={0.3} duration={0.7}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.a
-                href="mailto:contacto@greenalgorithm.com"
+                href="#contact"
                 className="btn-primary text-lg px-10 py-4 glow-effect-hover"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                aria-label="Contactar a GreenAlgorithm por correo electrónico"
+                aria-label="Ir a la sección de contacto con GreenAlgorithm"
               >
                 Comenzar Ahora
               </motion.a>

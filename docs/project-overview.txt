@@ -1,0 +1,64 @@
+GreenAlgorithm – Flujo y funcionamiento (explicado para dev junior)
+===============================================================
+
+Objetivo: one-page oscura con acento verde que vende servicios de software sostenible. Usa React + Vite + Tailwind + framer-motion y una escena 3D ligera.
+
+1) Flujo de arranque
+- src/main.jsx: crea el root React y monta <App /> dentro de #root. Activa React.StrictMode y carga estilos globales (index.css + Tailwind).
+- App.jsx: en el primer render pone colorScheme=dark en <html>. Inicia estado isLoading=true.
+- PageLoader: se muestra mientras isLoading es true. Simula progreso 0→100% con setInterval y al completar dispara onLoadComplete para setIsLoading(false). App también exige un mínimo de 2s de espera para que la animación se vea fluida.
+- Cuando isLoading pasa a false: se renderiza toda la página con fondo animado, navbar fijo y las secciones en orden vertical. El footer cierra la vista.
+
+2) Layout principal (App.jsx)
+- Fondo: AnimatedBackground (canvas 2D fijo) debajo de todo.
+- Navbar: siempre fijo arriba; cambia estilo si hay scroll o menú móvil abierto.
+- <main>: secciones en orden: Hero → About → Services → TechStack → WhyGreenAlgorithm → CallToAction.
+- Footer: texto legal y ubicación, año dinámico (new Date().getFullYear()).
+
+3) Componentes clave y qué hacen
+- AnimatedBackground.jsx: dibuja gradientes radiales en un canvas fijo. Limita FPS (30 en mobile, 60 en desktop), capea devicePixelRatio a 2 y desactiva el tercer gradiente en mobile. Respeta prefers-reduced-motion (no anima si el usuario lo pide).
+- Navbar.jsx: usa framer-motion para animar aparición. Detecta scrollY>50 para aplicar fondo blur + borde. En móvil tiene botón hamburguesa que abre/cierra menú con AnimatePresence; bloquea scroll del body cuando está abierto; se cierra solo al pasar a desktop (>=768px). Incluye accesibilidad (aria-label, aria-expanded, aria-controls). El botón “Contacto” (desktop y móvil) ancla a la sección de contacto (#contact).
+- Hero.jsx: cabecera con efecto “decipher” en dos líneas (hook useDecipherText) que scrambla caracteres y los revela. Aplica parallax sutil con useScroll/useTransform. CTA doble (“Comenzar proyecto” ancla a #contact y “Conocer más” ancla). Fondo con blobs y puntos flotantes. Carga perezosa HeroScene (3D) para no bloquear el render inicial.
+- About.jsx / Services.jsx / TechStack.jsx / WhyGreenAlgorithm.jsx: secciones de contenido con grids de tarjetas. Cada tarjeta muestra ícono SVG + título + descripción. Usan FadeInView para hacer fade+blur cuando entran en viewport. Añaden blobs/gradientes de fondo suaves.
+- CallToAction.jsx: bloque con gradientes animados y dos CTAs ("Comenzar Ahora" ancla a #contact y "Más Información" ancla a About). Animaciones escalonadas con FadeInView + framer-motion.
+- ContactSection.jsx: nueva sección al final antes del footer (id #contact) con tarjetas clicables para Teléfono, WhatsApp, Correo, Facebook e Instagram. Usa FadeInView por tarjeta y links que abren tel/wa/mail o nueva pestaña para redes.
+- Footer: texto centrado, tono bajo; ubicación “Tuxtla Gutiérrez, Chiapas, México”.
+
+4) Hook y utilidades
+- useDecipherText.js: dado un texto final, hace un efecto “scramble” con caracteres aleatorios y los va fijando uno a uno. Parámetros: scrambleDuration (ms), revealStagger (ms entre caracteres), scrambleSpeed (ms entre cambios aleatorios), startDelay y trigger. Devuelve displayText (lo que se pinta) e isComplete (bool para saber si terminó).
+- FadeInView.jsx: wrapper de animación. Props: direction (up/down/left/right/none), distance (px), delay, duration, once (default true), as (tag). Aplica estado inicial opaco + blur + desplazamiento y transiciona a visible cuando entra en viewport (useInView con margen -60px).
+
+5) Escena 3D (HeroScene y subcomponentes)
+- HeroScene.jsx: solo se renderiza si prefers-reduced-motion NO está activo. Usa @react-three/fiber. Canvas con dpr limitado, antialias off y powerPreference high-performance. Carga perezosa tres piezas:
+	• FloatingParticles.jsx: genera n puntos en esfera usando bufferGeometry + pointsMaterial aditivo. Se mueven con useFrame aplicando senos/cosenos.
+	• GlowingSphere.jsx: esfera interna translúcida + wireframe externa giratoria + luz puntual verde. Rotación lenta en useFrame.
+	• ConnectionLines.jsx: curvas Bézier entre nodos aleatorios; la opacidad pulsa en useFrame para simular transmisión de datos.
+
+6) Animaciones con framer-motion
+- motion + useScroll/useTransform para parallax (Hero, secciones con blobs) y detección de scroll (Navbar).
+- AnimatePresence para montar/desmontar el menú móvil y el loader.
+- Easing usado: arrays tipo [0.25, 0.46, 0.45, 0.94] (curva suave estilo Apple).
+
+7) Accesibilidad y UX
+- prefers-reduced-motion respetado en AnimatedBackground y HeroScene (no animan o no renderizan 3D).
+- Navbar móvil: aria-label, aria-expanded, aria-controls; bloqueo de scroll del body evita que el contenido se mueva detrás del overlay.
+- CTAs con texto claro; botones grandes y con hover/focus (heredados de Tailwind + utilidades custom).
+
+8) Estilos y tema
+- Tailwind + utilidades en index.css: botones primario/secundario, cards, gradients, blur, noise-texture. Tema oscuro forzado; acento verde (#22C55E aprox) sobre fondo azul oscuro.
+- section-container: centra y limita ancho; section-padding: espaciamiento vertical consistente.
+
+9) Datos estáticos actuales (para saber qué reemplazar)
+- Servicios: Desarrollo Web; Software Personalizado; IA y Automatización; Diseño UX/UI.
+- Tech stack: React; Node.js; Cloud; Inteligencia Artificial.
+- Razones: Rendimiento optimizado; Escalabilidad; Mentalidad verde.
+
+10) Rendimiento
+- Lazy load de HeroScene y subcomponentes 3D; fallback null para no bloquear UI.
+- Limitar dpr, sin antialias en WebGL; FPS limitado en canvas 2D.
+- useMotionValueEvent en Navbar para escuchar scroll sin overhead excesivo.
+
+11) Cómo seguir (ideas rápidas)
+- Reforzar accesibilidad (estados de focus visibles, roles si las cards son clicables).
+- Extraer textos a JSON/CMS para edición sin código.
+- Añadir mediciones (Lighthouse) y optimizar assets si se agregan imágenes pesadas.
