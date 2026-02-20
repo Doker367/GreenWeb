@@ -24,9 +24,10 @@ function AnimatedBackground() {
     let animationFrameId
     let time = 0
     let lastFrame = 0
-    // Limitar FPS en mobile a 30, desktop a 60
-    const targetFPS = isMobile ? 30 : 60
+    // Limitar FPS en mobile a 28, desktop a 48 para menos consumo
+    const targetFPS = isMobile ? 28 : 48
     const frameInterval = 1000 / targetFPS
+    let paused = document.hidden
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -34,14 +35,22 @@ function AnimatedBackground() {
       canvas.height = window.innerHeight * dpr
       canvas.style.width = `${window.innerWidth}px`
       canvas.style.height = `${window.innerHeight}px`
-      ctx.scale(dpr, dpr)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     }
 
     resize()
     window.addEventListener('resize', resize)
 
+    const onVisibilityChange = () => {
+      paused = document.hidden
+    }
+
+    document.addEventListener('visibilitychange', onVisibilityChange)
+
     const draw = (timestamp) => {
       animationFrameId = requestAnimationFrame(draw)
+
+      if (paused) return
 
       const delta = timestamp - lastFrame
       if (delta < frameInterval) return
@@ -114,6 +123,7 @@ function AnimatedBackground() {
 
     return () => {
       window.removeEventListener('resize', resize)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
       }

@@ -5,6 +5,7 @@ import Services from './components/Services'
 import TechStack from './components/TechStack'
 import WhyGreenAlgorithm from './components/WhyGreenAlgorithm'
 import CallToAction from './components/CallToAction'
+import ContactSection from './components/ContactSection'
 import Navbar from './components/Navbar'
 import AnimatedBackground from './components/AnimatedBackground'
 import PageLoader from './components/PageLoader'
@@ -15,8 +16,8 @@ function App() {
   useEffect(() => {
     document.documentElement.style.colorScheme = 'dark'
     
-    // Simulate minimum loading time for smooth animation
-    const minLoadTime = 2000
+    // Reducir tiempo mínimo de loader para mejorar percepción de velocidad
+    const minLoadTime = 800
     const startTime = Date.now()
 
     const handleLoad = () => {
@@ -51,6 +52,7 @@ function App() {
             <TechStack />
             <WhyGreenAlgorithm />
             <CallToAction />
+            <ContactSection />
           </main>
           <footer className="bg-primary/50 backdrop-blur-sm py-8 relative z-10">
             <div className="section-container">

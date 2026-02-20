@@ -18,17 +18,29 @@ const ConnectionLines = lazy(() => import('./ConnectionLines'))
  */
 function HeroScene() {
   const [shouldRender, setShouldRender] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
     setShouldRender(!mq.matches)
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024)
+    }
+
+    handleResize()
+
     const handler = (e) => setShouldRender(!e.matches)
     mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      mq.removeEventListener('change', handler)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
-  if (!shouldRender) return null
+  if (!shouldRender || isMobile) return null
 
   return (
     <div
@@ -48,9 +60,9 @@ function HeroScene() {
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.3} />
-          <FloatingParticles count={150} radius={8} />
-          <GlowingSphere position={[0, 0, 0]} scale={1} />
-          <ConnectionLines count={12} />
+          <FloatingParticles count={90} radius={7} />
+          <GlowingSphere position={[0, 0, 0]} scale={0.9} />
+          <ConnectionLines count={8} />
         </Suspense>
       </Canvas>
     </div>

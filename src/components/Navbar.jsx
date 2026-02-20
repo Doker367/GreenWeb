@@ -101,7 +101,10 @@ function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a href="#cta" className="btn-primary text-sm px-5 py-2.5 rounded-full glow-effect-hover">
+            <a
+              href="#contact"
+              className="btn-primary text-sm px-5 py-2.5 rounded-full glow-effect-hover"
+            >
               Contacto
             </a>
           </div>
@@ -168,7 +171,7 @@ function Navbar() {
                 </motion.a>
               ))}
               <motion.a
-                href="#cta"
+                href="#contact"
                 variants={mobileLinkVariants}
                 className="btn-primary text-center mt-4 rounded-full glow-effect-hover"
                 onClick={closeMobile}
