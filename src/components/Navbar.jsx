@@ -1,188 +1,116 @@
-import { useState, useEffect, useCallback } from 'react'
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { href: '#about', label: 'Sobre Nosotros' },
   { href: '#services', label: 'Servicios' },
   { href: '#tech', label: 'Tecnología' },
-  { href: '#why', label: 'Por Qué Nosotros' },
+  { href: '#why', label: 'Por Qué' },
 ]
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
-  const { scrollY } = useScroll()
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    setIsScrolled(latest > 50)
-  })
-
-  // Cerrar menú al hacer resize a desktop
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) setIsMobileOpen(false)
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
     }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  // Bloquear scroll del body cuando el menú está abierto
-  useEffect(() => {
-    document.body.style.overflow = isMobileOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [isMobileOpen])
-
-  const toggleMobile = useCallback(() => {
-    setIsMobileOpen(prev => !prev)
-  }, [])
-
-  const closeMobile = useCallback(() => {
-    setIsMobileOpen(false)
-  }, [])
-
-  const mobileMenuVariants = {
-    closed: {
-      opacity: 0,
-      y: -20,
-      transition: { duration: 0.2 },
-    },
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        staggerChildren: 0.07,
-        delayChildren: 0.1,
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: -20,
-      transition: { duration: 0.2 },
-    },
-  }
-
-  const mobileLinkVariants = {
-    closed: { opacity: 0, x: -20 },
-    open: { opacity: 1, x: 0 },
-  }
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileOpen
-          ? 'bg-[#0a1120]/80 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.05)] border-b border-white/[0.06]'
-          : 'bg-transparent'
-      }`}
-      role="navigation"
-      aria-label="Navegación principal"
-    >
-      <div className="section-container py-3 sm:py-4">
-        <div className="flex items-center justify-between">
-          <motion.a
-            href="#hero"
-            className="text-xl sm:text-2xl font-heading font-bold cursor-pointer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            aria-label="GreenAlgorithm - Ir al inicio"
-            onClick={closeMobile}
-          >
-            <span className="text-white">Green</span>
-            <span className="text-cta">Algorithm</span>
-          </motion.a>
-          
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-5 lg:gap-7">
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="nav-link text-[0.9rem] font-medium text-white/70 hover:text-white">
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              className="btn-primary text-sm px-5 py-2.5 rounded-full glow-effect-hover"
-            >
-              Contacto
+    <>
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
+      >
+        <div 
+          className={`
+            relative flex items-center justify-between px-6 py-3 
+            rounded-full transition-all duration-500 ease-out
+            ${isMobileOpen ? 'bg-black/90 w-full max-w-sm flex-col items-start gap-4 p-6' : 'glass-dark w-full max-w-5xl'}
+            ${isScrolled && !isMobileOpen ? 'shadow-2xl shadow-black/50 backdrop-blur-2xl bg-black/60' : ''}
+          `}
+        >
+          <div className="flex items-center justify-between w-full">
+            <a href="#" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                G
+              </div>
+              <span className="font-display font-medium text-white tracking-tight">GreenAlgorithm</span>
             </a>
-          </div>
 
-          {/* Mobile hamburger / close button */}
-          <button
-            className="md:hidden text-white cursor-pointer p-2 -mr-2 relative z-50"
-            aria-label={isMobileOpen ? 'Cerrar menú' : 'Abrir menú de navegación'}
-            aria-expanded={isMobileOpen}
-            aria-controls="mobile-menu"
-            onClick={toggleMobile}
-          >
-            <div className="w-6 h-5 relative flex flex-col justify-between">
-              <motion.span
-                className="block h-0.5 w-6 bg-current rounded-full origin-center"
-                animate={isMobileOpen
-                  ? { rotate: 45, y: 9 }
-                  : { rotate: 0, y: 0 }
-                }
-                transition={{ duration: 0.3 }}
-              />
-              <motion.span
-                className="block h-0.5 w-6 bg-current rounded-full"
-                animate={isMobileOpen
-                  ? { opacity: 0, x: -20 }
-                  : { opacity: 1, x: 0 }
-                }
-                transition={{ duration: 0.2 }}
-              />
-              <motion.span
-                className="block h-0.5 w-6 bg-current rounded-full origin-center"
-                animate={isMobileOpen
-                  ? { rotate: -45, y: -9 }
-                  : { rotate: 0, y: 0 }
-                }
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <motion.div
-            id="mobile-menu"
-            variants={mobileMenuVariants}
-            initial="closed"
-            animate="open"
-            exit="exit"
-            className="md:hidden absolute top-full left-0 right-0 bg-[#0a1120]/95 backdrop-blur-2xl border-b border-white/[0.06] shadow-2xl"
-          >
-            <div className="section-container py-6 flex flex-col gap-1">
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/5 ml-auto mr-4">
               {navLinks.map((link) => (
-                <motion.a
+                <a
                   key={link.href}
                   href={link.href}
-                  variants={mobileLinkVariants}
-                  className="text-white/70 hover:text-white py-3 px-4 rounded-lg hover:bg-white/[0.06] transition-all duration-200 text-lg font-body"
-                  onClick={closeMobile}
+                  className="px-4 py-1.5 text-sm text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/10"
                 >
                   {link.label}
-                </motion.a>
+                </a>
               ))}
-              <motion.a
-                href="#contact"
-                variants={mobileLinkVariants}
-                className="btn-primary text-center mt-4 rounded-full glow-effect-hover"
-                onClick={closeMobile}
+            </div>
+
+            <div className="hidden md:block">
+              <a 
+                href="#contact" 
+                className="btn-primary text-xs px-5 py-2.5"
               >
                 Contacto
-              </motion.a>
+              </a>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+
+            {/* Mobile Toggle */}
+            <button
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              className="md:hidden p-2 text-white/80 hover:text-white focus:outline-none"
+            >
+              <div className="w-5 h-4 relative flex flex-col justify-between">
+                <span className={`block w-full h-0.5 bg-current transition-transform duration-300 ${isMobileOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+                <span className={`block w-full h-0.5 bg-current transition-opacity duration-300 ${isMobileOpen ? 'opacity-0' : ''}`} />
+                <span className={`block w-full h-0.5 bg-current transition-transform duration-300 ${isMobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              </div>
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMobileOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="w-full md:hidden overflow-hidden flex flex-col gap-2 pt-2"
+              >
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileOpen(false)}
+                    className="block px-4 py-3 text-white/70 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <a
+                  href="#contact"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="block px-4 py-3 text-primary hover:text-white hover:bg-primary rounded-xl transition-all text-center mt-2 font-medium"
+                >
+                  Contacto
+                </a>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.nav>
+    </>
   )
 }
 

@@ -1,46 +1,31 @@
-import { Suspense, lazy, useState, useEffect } from 'react'
+import { Suspense, lazy, useState, useEffect, memo } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { Preload, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 
-const FloatingParticles = lazy(() => import('./FloatingParticles'))
-const GlowingSphere = lazy(() => import('./GlowingSphere'))
-const ConnectionLines = lazy(() => import('./ConnectionLines'))
+// Optimized Hero Scene
+const OptimizedHeroScene = lazy(() => import('./OptimizedHeroScene'))
 
-/**
- * HeroScene — Escena 3D principal para el hero section.
- * Combina partículas flotantes, esfera glowing y líneas de conexión.
- * 
- * Optimizaciones:
- * - Lazy loading de sub-componentes 3D
- * - Detección de prefers-reduced-motion para accesibilidad
- * - DPR limitado para no saturar GPUs integradas
- * - frameloop="demand" implícito (siempre se anima pero con bajo overhead)
- * - Fallback nulo para que la UI no se bloquee durante la carga
- */
 function HeroScene() {
-  const [shouldRender, setShouldRender] = useState(true)
-  const [isMobile, setIsMobile] = useState(false)
+  const [shouldRender, setShouldRender] = useState(false)
+  const [hasWebGLError, setHasWebGLError] = useState(false)
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setShouldRender(!mq.matches)
+    // Only render on desktop or high-performance devices for best UX
+    const isMobile = window.innerWidth < 768
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
+    setShouldRender(!isMobile && !prefersReducedMotion)
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024)
+      const mobile = window.innerWidth < 768
+      setShouldRender(!mobile && !prefersReducedMotion)
     }
 
-    handleResize()
-
-    const handler = (e) => setShouldRender(!e.matches)
-    mq.addEventListener('change', handler)
     window.addEventListener('resize', handleResize)
-
-    return () => {
-      mq.removeEventListener('change', handler)
-      window.removeEventListener('resize', handleResize)
-    }
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  if (!shouldRender || isMobile) return null
+  if (!shouldRender || hasWebGLError) return null
 
   return (
     <div
@@ -49,24 +34,31 @@ function HeroScene() {
       style={{ pointerEvents: 'none' }}
     >
       <Canvas
-        dpr={[1, 1.5]}
-        camera={{ position: [0, 0, 8], fov: 60 }}
+        dpr={[1, 2]} // Standard DPR range for optimization
+        camera={{ position: [0, 0, 10], fov: 45 }}
         gl={{
-          antialias: false,
+          antialias: true, // Re-enable for the new smoother scene
           alpha: true,
           powerPreference: 'high-performance',
+          stencil: false,
+          depth: true,
         }}
-        style={{ background: 'transparent' }}
+        onCreated={({ gl }) => {
+          gl.domElement.addEventListener('webglcontextlost', (event) => {
+            event.preventDefault()
+            setHasWebGLError(true)
+          }, false)
+        }}
       >
         <Suspense fallback={null}>
-          <ambientLight intensity={0.3} />
-          <FloatingParticles count={90} radius={7} />
-          <GlowingSphere position={[0, 0, 0]} scale={0.9} />
-          <ConnectionLines count={8} />
+          <OptimizedHeroScene />
+          <AdaptiveDpr pixelated />
+          <AdaptiveEvents />
+          <Preload all />
         </Suspense>
       </Canvas>
     </div>
   )
 }
 
-export default HeroScene
+export default memo(HeroScene)

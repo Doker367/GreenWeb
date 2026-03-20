@@ -3,13 +3,22 @@ import FadeInView from './FadeInView'
 
 const contacts = [
   {
-    label: 'Teléfono',
-    value: '+52 921 438 0943',
-    href: 'tel:+529214380943',
-    cta: 'Llamar',
+    label: 'Facebook',
+    value: 'GreenAlgorithm',
+    href: 'https://www.facebook.com/profile.php?id=61587251265634',
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h2l2 5-1.5 1.5a13 13 0 006.5 6.5L14 14l5 2v2a2 2 0 01-2 2h-1c-7.18 0-13-5.82-13-13V5z" />
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Instagram',
+    value: '@green_algorithm_',
+    href: 'https://www.instagram.com/green_algorithm_/',
+    icon: (
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
       </svg>
     ),
   },
@@ -17,89 +26,56 @@ const contacts = [
     label: 'WhatsApp',
     value: '+52 921 438 0943',
     href: 'https://wa.me/529214380943',
-    cta: 'Abrir WhatsApp',
     icon: (
-      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16.635 14.522c-.278-.14-1.642-.81-1.896-.902-.255-.093-.441-.14-.628.14-.186.279-.721.902-.884 1.088-.163.186-.325.21-.603.07-.278-.14-1.175-.433-2.24-1.38-.828-.739-1.386-1.652-1.55-1.93-.163-.279-.017-.43.123-.57.127-.126.279-.326.418-.488.14-.163.186-.279.279-.465.093-.186.047-.349-.023-.488-.07-.14-.628-1.517-.86-2.077-.227-.546-.458-.472-.628-.48-.163-.007-.349-.009-.535-.009-.186 0-.488.07-.744.349-.255.279-.977.955-.977 2.327 0 1.373 1 2.7 1.138 2.887.14.186 1.972 3.006 4.775 4.214.667.288 1.187.46 1.593.589.669.213 1.278.183 1.76.111.536-.08 1.642-.67 1.874-1.318.232-.649.232-1.205.163-1.325-.07-.116-.255-.186-.533-.326z" />
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
       </svg>
     ),
-  },
-  {
-    label: 'Correo',
-    value: 'greenalgorithm92@gmail.com',
-    href: 'mailto:greenalgorithm92@gmail.com',
-    cta: 'Enviar correo',
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Facebook',
-    value: 'greenalgorithm',
-    href: 'https://www.facebook.com/greenalgorithm',
-    cta: 'Abrir Facebook',
-    icon: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M13 10h2.5l.5-3H13V5.5c0-.9.3-1.5 1.6-1.5H16V1.1C15.2 1 14.1 1 13 1c-2.4 0-4 1.5-4 4.2V7H7v3h2v9h4v-9z" />
-      </svg>
-    ),
-  },
-  {
-    label: 'Instagram',
-    value: '@green_algorithm_',
-    href: 'https://www.instagram.com/green_algorithm_',
-    cta: 'Abrir Instagram',
-    icon: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A4.5 4.5 0 1112 18.5 4.5 4.5 0 0112 7.5zm0 2A2.5 2.5 0 1014.5 12 2.5 2.5 0 0012 9.5zm5.25-4a1.25 1.25 0 11-1.25 1.25A1.25 1.25 0 0117.25 5.5z" />
-      </svg>
-    ),
-  },
+  }
 ]
 
 function ContactSection() {
   return (
-    <section id="contact" className="section-padding bg-primary/30 relative overflow-hidden">
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cta/10 rounded-full blur-3xl" />
-        <div className="absolute top-10 left-10 w-72 h-72 bg-cta/5 rounded-full blur-3xl" />
-      </motion.div>
-
+    <section id="contact" className="section-padding bg-black relative border-t border-white/5">
       <div className="section-container relative z-10">
-        <FadeInView direction="up" duration={0.7}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-center mb-3">
-            Contacto y cotizaciones
-          </h2>
-        </FadeInView>
-        <FadeInView direction="up" delay={0.1} duration={0.7}>
-          <p className="text-center text-text/70 max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
-            Elige el canal que prefieras para hablarnos sobre tu proyecto. Respondemos en horario laboral (GMT-6).
-          </p>
-        </FadeInView>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <FadeInView>
+            <h2 className="heading-lg text-white mb-6">
+              Construyamos algo <br />
+              <span className="text-gradient-blue">extraordinario.</span>
+            </h2>
+            <p className="text-text-muted text-lg mb-10">
+              ¿Listo para iniciar tu proyecto? Estamos aquí para ayudarte a transformar tus ideas en realidad.
+            </p>
+            <a 
+              href="https://wa.me/529214380943" 
+              className="btn-primary px-8 py-4 text-lg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Iniciar un Proyecto
+            </a>
+          </FadeInView>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {contacts.map((item, idx) => (
-            <FadeInView key={item.label} delay={0.05 * idx} direction="up">
+            <FadeInView key={item.label} delay={0.2 + idx * 0.1} direction="up">
               <a
                 href={item.href}
-                className="card h-full flex items-start gap-4 hover:border-cta/40 transition-colors"
-                target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors group"
+                target="_blank"
+                rel="noreferrer"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cta/10 text-cta border border-cta/30 shrink-0">
+                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <div className="flex-1">
-                  <p className="text-text/60 text-xs uppercase tracking-wide">{item.label}</p>
-                  <p className="text-white text-base sm:text-lg font-semibold leading-tight mt-0.5">{item.value}</p>
-                  <p className="text-cta text-xs sm:text-sm mt-1 font-medium">{item.cta}</p>
-                </div>
+                <span className="text-xs font-medium text-text-muted uppercase tracking-wider mb-2">
+                  {item.label}
+                </span>
+                <span className="text-white font-medium">
+                  {item.value}
+                </span>
               </a>
             </FadeInView>
           ))}

@@ -1,10 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-/**
- * AnimatedBackground — Canvas 2D con gradientes radiales animados.
- * Optimizado: en mobile usa menos gradientes y menor frecuencia.
- * Respeta prefers-reduced-motion.
- */
 function AnimatedBackground() {
   const canvasRef = useRef(null)
   const [isMobile, setIsMobile] = useState(false)
@@ -24,7 +19,6 @@ function AnimatedBackground() {
     let animationFrameId
     let time = 0
     let lastFrame = 0
-    // Limitar FPS en mobile a 28, desktop a 48 para menos consumo
     const targetFPS = isMobile ? 28 : 48
     const frameInterval = 1000 / targetFPS
     let paused = document.hidden
@@ -70,10 +64,10 @@ function AnimatedBackground() {
         w * 0.9
       )
 
-      gradient.addColorStop(0, 'rgba(34, 197, 94, 0.25)')
-      gradient.addColorStop(0.3, 'rgba(34, 197, 94, 0.15)')
-      gradient.addColorStop(0.6, 'rgba(30, 41, 59, 0.1)')
-      gradient.addColorStop(1, 'rgba(15, 23, 42, 0)')
+      gradient.addColorStop(0, 'rgba(6, 182, 212, 0.25)')
+      gradient.addColorStop(0.3, 'rgba(6, 182, 212, 0.15)')
+      gradient.addColorStop(0.6, 'rgba(26, 26, 46, 0.1)')
+      gradient.addColorStop(1, 'rgba(10, 10, 15, 0)')
 
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, w, h)
@@ -87,14 +81,13 @@ function AnimatedBackground() {
         w * 0.7
       )
 
-      gradient2.addColorStop(0, 'rgba(34, 197, 94, 0.15)')
-      gradient2.addColorStop(0.5, 'rgba(34, 197, 94, 0.08)')
-      gradient2.addColorStop(1, 'rgba(15, 23, 42, 0)')
+      gradient2.addColorStop(0, 'rgba(6, 182, 212, 0.15)')
+      gradient2.addColorStop(0.5, 'rgba(6, 182, 212, 0.08)')
+      gradient2.addColorStop(1, 'rgba(10, 10, 15, 0)')
 
       ctx.fillStyle = gradient2
       ctx.fillRect(0, 0, w, h)
 
-      // Tercer gradiente solo en desktop
       if (!isMobile) {
         const gradient3 = ctx.createRadialGradient(
           w * 0.5 + Math.sin(time * 0.0007) * 100,
@@ -105,8 +98,8 @@ function AnimatedBackground() {
           w * 0.5
         )
 
-        gradient3.addColorStop(0, 'rgba(34, 197, 94, 0.1)')
-        gradient3.addColorStop(1, 'rgba(15, 23, 42, 0)')
+        gradient3.addColorStop(0, 'rgba(16, 185, 129, 0.1)')
+        gradient3.addColorStop(1, 'rgba(10, 10, 15, 0)')
 
         ctx.fillStyle = gradient3
         ctx.fillRect(0, 0, w, h)
