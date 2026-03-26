@@ -1,151 +1,86 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import FadeInView from './FadeInView'
 
 function About() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start']
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50])
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  }
-
   return (
-    <section id="about" ref={ref} className="section-padding bg-primary/30 relative overflow-hidden">
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 opacity-30"
-      >
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cta/10 rounded-full blur-3xl" />
-      </motion.div>
-
+    <section id="about" className="section-padding relative overflow-hidden bg-black">
       <div className="section-container relative z-10">
-        <div>
-          <FadeInView direction="up" duration={0.7}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-center mb-4 relative inline-block w-full">
-              Sobre <span className="text-gradient">GreenAlgorithm</span>
-              <motion.span
-                initial={{ width: 0 }}
-                animate={isInView ? { width: '100%' } : { width: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cta to-transparent"
-              />
-            </h2>
-          </FadeInView>
-
-          <FadeInView direction="up" delay={0.15} duration={0.7}>
-            <p className="text-center text-text/70 text-base sm:text-lg mb-8 sm:mb-12 lg:mb-16 max-w-3xl mx-auto px-2">
-              Somos un equipo de desarrolladores apasionados por crear software que no solo
-              resuelve problemas, sino que también respeta nuestro planeta.
-            </p>
-          </FadeInView>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <FadeInView delay={0.1} direction="up">
-              <div className="card group h-full">
-                <div className="mb-4">
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <svg
-                      className="w-12 h-12 mx-auto text-cta"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                      />
-                    </svg>
-                  </motion.div>
-                </div>
-                <h3 className="text-xl font-heading font-semibold mb-3">Innovación</h3>
-                <p className="text-text/70">
-                  Utilizamos las últimas tecnologías y metodologías para crear soluciones
-                  de vanguardia.
-                </p>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          {/* Left Column: Heading */}
+          <div>
+            <FadeInView direction="up" duration={0.8}>
+              <span className="text-primary font-semibold tracking-wide uppercase text-sm mb-4 block">
+                Quiénes Somos
+              </span>
+              <h2 className="heading-lg text-white mb-8">
+                Creamos software que <span className="text-gradient-blue">importa.</span>
+              </h2>
+              <p className="text-xl text-text-muted leading-relaxed">
+                GreenAlgorithm es una consultoría premium de software. Combinamos ingeniería de élite con diseño centrado en el humano para crear productos digitales que perduran.
+              </p>
             </FadeInView>
+          </div>
 
+          {/* Right Column: Values Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FadeInView delay={0.2} direction="up">
-              <div className="card group h-full">
-                <div className="mb-4">
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <svg
-                      className="w-12 h-12 mx-auto text-cta"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 002 2h2.945M15 11a3 3 0 11-6 0m5.945 4H11a2 2 0 01-2-2v-1a2 2 0 012-2h2.945M15 11V9a2 2 0 00-2-2H9a2 2 0 00-2 2v2m6 0v2a2 2 0 01-2 2H9a2 2 0 01-2-2v-2m6 0h-2m2 0h2"
-                      />
-                    </svg>
-                  </motion.div>
+              <div className="glass p-8 rounded-3xl h-full hover-card">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-primary mb-6">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
-                <h3 className="text-xl font-heading font-semibold mb-3">Sostenibilidad</h3>
-                <p className="text-text/70">
-                  Cada línea de código está optimizada para minimizar el consumo de recursos
-                  y el impacto ambiental.
+                <h3 className="text-xl font-display font-semibold text-white mb-3">Rendimiento</h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  La velocidad es una característica. Optimizamos cada byte para que tu aplicación se sienta instantánea.
                 </p>
               </div>
             </FadeInView>
 
             <FadeInView delay={0.3} direction="up">
-              <div className="card group h-full">
-                <div className="mb-4">
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <svg
-                      className="w-12 h-12 mx-auto text-cta"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </motion.div>
+              <div className="glass p-8 rounded-3xl h-full hover-card">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-primary mb-6">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
-                <h3 className="text-xl font-heading font-semibold mb-3">Rendimiento</h3>
-                <p className="text-text/70">
-                  Aplicaciones rápidas, escalables y eficientes que ofrecen una experiencia
-                  excepcional al usuario.
+                <h3 className="text-xl font-display font-semibold text-white mb-3">Calidad</h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  Cero compromisos con la calidad del código. Escribimos código mantenible, escalable y seguro.
+                </p>
+              </div>
+            </FadeInView>
+             
+             <FadeInView delay={0.4} direction="up">
+              <div className="glass p-8 rounded-3xl h-full hover-card">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-primary mb-6">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-display font-semibold text-white mb-3">Sostenibilidad</h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                   El código eficiente consume menos energía. Construimos para un futuro digital más verde.
+                </p>
+              </div>
+            </FadeInView>
+
+             <FadeInView delay={0.5} direction="up">
+              <div className="glass p-8 rounded-3xl h-full hover-card">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-primary mb-6">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-display font-semibold text-white mb-3">Innovación</h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  Nos mantenemos a la vanguardia, aprovechando la IA y tecnologías modernas para resolver problemas complejos.
                 </p>
               </div>
             </FadeInView>
           </div>
+
         </div>
       </div>
     </section>

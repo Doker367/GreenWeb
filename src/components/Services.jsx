@@ -1,114 +1,125 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
 import FadeInView from './FadeInView'
 
 const services = [
   {
-    title: 'Desarrollo Web',
-    description: 'Aplicaciones web modernas, rápidas y escalables con las mejores tecnologías del mercado.',
+    title: "Desarrollo Web",
+    subtitle: "Sitios de alto rendimiento",
+    description: "Aplicaciones web personalizadas construidas con React y Next.js. Rápidas, optimizadas para SEO y escalables.",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
+    features: ["E-commerce", "Plataformas SaaS", "Landing Pages", "Dashboards"]
   },
   {
-    title: 'Software Personalizado',
-    description: 'Soluciones a medida que se adaptan perfectamente a las necesidades específicas de tu negocio.',
+    title: "Apps Móviles",
+    subtitle: "iOS & Android",
+    description: "Experiencias móviles de calidad nativa usando Flutter y React Native. Una base de código, dos plataformas.",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
     ),
+    features: ["Multiplataforma", "Sin conexión", "Notificaciones Push", "GPS"]
   },
   {
-    title: 'IA y Automatización',
-    description: 'Integramos inteligencia artificial para automatizar procesos y potenciar la toma de decisiones.',
+    title: "Automatizaciones n8n",
+    subtitle: "Workflow Efficiency",
+    description: "Optimizamos tus procesos de negocio conectando herramientas y automatizando tareas repetitivas con n8n.",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
+    features: ["Workflows Complejos", "Integración de APIs", "Webhooks", "Sincronización"]
   },
   {
-    title: 'Diseño UX/UI',
-    description: 'Interfaces intuitivas y atractivas que mejoran la experiencia del usuario y aumentan la conversión.',
+    title: "Mantenimiento Experto",
+    subtitle: "Continuidad y Evolución",
+    description: "Nos encargamos de que tu software se mantenga seguro y evolucione con tu negocio.",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
+    features: ["Updates de seguridad", "Corrección de bugs", "Nuevas funcionalidades", "Monitoreo de uptime"]
+  },
+  {
+    title: "Hosting Administrado",
+    subtitle: "Infraestructura GreenAlgorithm",
+    description: "Nosotros nos encargamos de todo el despliegue y la administración técnica de tus servidores.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+      </svg>
+    ),
+    features: ["Administración total", "Certificados SSL", "Backups automáticos", "CDN de alta velocidad"]
+  },
+  {
+    title: "Ciberseguridad",
+    subtitle: "Protección y Cumplimiento",
+    description: "Auditorías de seguridad completas e implementación para salvaguardar tus activos digitales.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+    ),
+    features: ["Pruebas de Penetración", "Auditorías de Seguridad", "Encriptación de Datos", "Cumplimiento"]
   },
 ]
 
 function Services() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start']
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [-30, 30])
-
   return (
-    <section id="services" ref={ref} className="section-padding relative overflow-hidden">
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 opacity-20"
-      >
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-cta/10 rounded-full blur-3xl" />
-      </motion.div>
-
+    <section id="services" className="section-padding bg-black relative">
       <div className="section-container relative z-10">
-        <div>
-          <FadeInView direction="up" duration={0.7}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-center mb-4 relative inline-block w-full">
-              Nuestros <span className="text-gradient">Servicios</span>
-              <motion.span
-                initial={{ width: 0 }}
-                animate={isInView ? { width: '100%' } : { width: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cta to-transparent"
-              />
+        <div className="text-center mb-20">
+          <FadeInView>
+            <h2 className="heading-lg text-white mb-6">
+              Nuestra <span className="text-gradient-blue">Experiencia.</span>
             </h2>
-          </FadeInView>
-
-          <FadeInView direction="up" delay={0.15} duration={0.7}>
-            <p className="text-center text-text/70 text-base sm:text-lg mb-8 sm:mb-12 lg:mb-16 max-w-3xl mx-auto px-2">
-              Ofrecemos soluciones completas para transformar tu visión en realidad digital.
+            <p className="text-text-muted text-lg max-w-2xl mx-auto">
+              Soluciones especializadas adaptadas a los desafíos específicos de cada industria.
             </p>
           </FadeInView>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-            {services.map((service, index) => (
-              <FadeInView key={index} delay={0.1 + index * 0.1} direction="up">
-                <motion.div
-                  className="card group h-full"
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <div className="flex items-start gap-4">
-                    <motion.div
-                      className="text-cta group-hover:scale-110 transition-transform duration-fast"
-                      whileHover={{ rotate: 5 }}
-                    >
-                      {service.icon}
-                    </motion.div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-heading font-semibold mb-2 group-hover:text-cta transition-colors duration-fast">
-                        {service.title}
-                      </h3>
-                      <p className="text-text/70 leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.map((service, index) => (
+            <FadeInView key={service.title} delay={index * 0.1}>
+              <div className="glass p-8 rounded-3xl h-full hover-card group cursor-default">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                    {service.icon}
                   </div>
-                </motion.div>
-              </FadeInView>
-            ))}
-          </div>
+                  <span className="text-xs font-medium text-white/40 uppercase tracking-wider border border-white/10 px-3 py-1 rounded-full">
+                    {service.subtitle}
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl font-display font-semibold text-white mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-text-muted leading-relaxed mb-8">
+                  {service.description}
+                </p>
+
+                <div className="border-t border-white/5 pt-6">
+                  <div className="grid grid-cols-2 gap-3">
+                    {service.features.map(feature => (
+                      <div key={feature} className="flex items-center gap-2 text-sm text-white/60">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </FadeInView>
+          ))}
         </div>
       </div>
     </section>
