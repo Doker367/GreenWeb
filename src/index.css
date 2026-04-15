@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-text font-sans antialiased selection:bg-primary/30;
+    @apply bg-black text-white font-sans antialiased selection:bg-[#0071E3]/30;
     margin: 0;
     padding: 0;
     background-color: #000000;
@@ -15,6 +15,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  ::selection {
+    background-color: rgba(0, 113, 227, 0.3);
+  }
 }
 
 @layer utilities {
@@ -23,28 +27,29 @@
   }
 
   .text-gradient-blue {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#2997FF] to-[#0077ED];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0071E3] via-[#59ACFF] to-[#0071E3];
   }
 
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.06];
   }
   
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+    @apply bg-black/40 backdrop-blur-xl border border-white/[0.04];
   }
 
   .hover-card {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
   
   .hover-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
-}
 
-@layer components {
   .section-container {
     @apply max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12;
   }
@@ -52,30 +57,24 @@
   .section-padding {
     @apply py-24 sm:py-32;
   }
+}
 
+@layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-white font-medium text-sm transition-all duration-300 hover:bg-primaryHover hover:scale-105 active:scale-95 shadow-lg shadow-primary/20;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#0071E3] text-white font-medium text-base transition-all duration-300 hover:bg-[#0077ED] hover:scale-[1.02] active:scale-[0.98];
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-surface text-white font-medium text-sm transition-all duration-300 hover:bg-surfaceHighlight border border-white/10 hover:border-white/20;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/[0.06] text-white font-medium text-base transition-all duration-300 hover:bg-white/[0.1] border border-white/[0.06];
   }
 
-  .heading-xl {
-    @apply font-display font-semibold text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.1];
-  }
-
-  .heading-lg {
-    @apply font-display font-semibold text-4xl sm:text-5xl tracking-tight leading-[1.1];
-  }
-
-  .heading-md {
-    @apply font-display font-medium text-2xl sm:text-3xl tracking-tight;
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-white placeholder-white/30 focus:outline-none focus:border-[#0071E3]/50 transition-colors;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -84,10 +83,104 @@
 
 ::-webkit-scrollbar-thumb {
   background: #333;
-  border-radius: 5px;
-  border: 2px solid #000000;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #444;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0071E3 0%, #59ACFF 50%, #0071E3 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(0, 113, 227, 0.3);
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 60px rgba(0, 113, 227, 0.4);
+}
+
+.parallax-slow {
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .section-container {
+    @apply px-5;
+  }
 }
