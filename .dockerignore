@@ -1,0 +1,9 @@
+npm-debug.log
+Dockerfile
+docker-compose.yml
+.dockerignore
+.git
+.gitignore
+.env.local
+.env.production
+dist

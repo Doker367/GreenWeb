@@ -1,0 +1,421 @@
+{
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Software Development Studio · Since 2019",
+    "title": {
+      "line1": "We build",
+      "line2": "digital products",
+      "line3": "people love."
+    },
+    "description": "Premium software development for forward-thinking companies. We craft exceptional web, mobile, and AI solutions that drive real business impact.",
+    "cta": {
+      "primary": "View Our Work",
+      "secondary": "Start a Project"
+    },
+    "scroll": "Scroll",
+    "parallax": {
+      "innovation": "INNOVATION",
+      "design": "DESIGN",
+      "technology": "TECHNOLOGY",
+      "excellence": "EXCELLENCE"
+    }
+  },
+  "stats": {
+    "title": "Numbers that speak",
+    "subtitle": "We measure our success by the success of our clients",
+    "projects": {
+      "label": "Projects Delivered",
+      "description": "From startups to enterprise, we've shipped products across 12+ industries"
+    },
+    "satisfaction": {
+      "label": "Client Satisfaction",
+      "description": "Based on post-project surveys and long-term relationships"
+    },
+    "users": {
+      "label": "Users Reached",
+      "description": "Our products have been used by millions of people worldwide"
+    },
+    "support": {
+      "label": "Support Coverage",
+      "description": "Round-the-clock monitoring and rapid response for critical issues"
+    },
+    "trustedBy": "Trusted by innovative companies worldwide"
+  },
+  "about": {
+    "label": "About Us",
+    "title": {
+      "prefix": "Engineering excellence meets human-centered",
+      "suffix": "design."
+    },
+    "description1": "Founded in 2019 in Tuxtla Gutiérrez, Mexico, GreenAlgorithm has grown from a small development studio into a premium software consultancy serving clients across the Americas.",
+    "description2": "We believe that great software should be invisible — it should just work. Our team of engineers, designers, and strategists work together to create digital experiences that feel effortless, perform flawlessly, and scale without limits.",
+    "badges": {
+      "mexico": "Mexico HQ",
+      "remote": "Remote-First",
+      "years": "5+ Years"
+    },
+    "image": {
+      "philosophy": "Our Philosophy",
+      "quote": "\"Code is poetry. Design is empathy.\""
+    },
+    "values": {
+      "velocity": {
+        "title": "Velocity",
+        "description": "We ship fast without sacrificing quality. Our agile process ensures rapid iterations and quick time-to-market."
+      },
+      "security": {
+        "title": "Security First",
+        "description": "Every line of code is written with security in mind. We implement industry-best practices for data protection."
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "Efficient code means less energy consumption. We optimize for performance and environmental impact."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We stay at the cutting edge of technology, leveraging AI and modern frameworks to solve complex problems."
+      }
+    }
+  },
+  "services": {
+    "label": "What We Do",
+    "title": {
+      "prefix": "Services that drive",
+      "suffix": "results."
+    },
+    "description": "End-to-end software development from ideation to deployment and beyond.",
+    "items": {
+      "web": {
+        "title": "Web Development",
+        "subtitle": "High-performance applications",
+        "description": "Custom web applications built with React, Next.js, and modern cloud infrastructure. Optimized for speed, SEO, and scale.",
+        "features": ["SaaS Platforms", "E-commerce", "Dashboards", "Landing Pages"]
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "subtitle": "iOS & Android native",
+        "description": "Beautiful, performant mobile experiences. We build native iOS, Android, and cross-platform apps with Flutter and React Native.",
+        "features": ["Native iOS", "Native Android", "Cross-platform", "Wearables"]
+      },
+      "ai": {
+        "title": "AI & Machine Learning",
+        "subtitle": "Intelligent solutions",
+        "description": "Custom AI models, LLM integrations, and intelligent automation. We make AI practical for your business.",
+        "features": ["LLM Integration", "Computer Vision", "NLP", "Predictive Analytics"]
+      },
+      "cloud": {
+        "title": "Cloud & DevOps",
+        "subtitle": "Scalable infrastructure",
+        "description": "AWS, GCP, and Azure architecture. CI/CD pipelines, container orchestration, and 24/7 monitoring.",
+        "features": ["AWS/GCP/Azure", "Kubernetes", "CI/CD", "Monitoring"]
+      },
+      "automation": {
+        "title": "Process Automation",
+        "subtitle": "Workflow Efficiency",
+        "description": "Streamline your operations with intelligent automation. Connect tools, automate workflows, and eliminate repetitive tasks with n8n.",
+        "features": ["Complex Workflows", "API Integration", "Webhooks", "Synchronization"]
+      },
+      "security": {
+        "title": "Cybersecurity",
+        "subtitle": "Protection & Compliance",
+        "description": "Security audits, penetration testing, and compliance implementation. Protect your digital assets and customer data.",
+        "features": ["Security Audits", "Penetration Testing", "Compliance", "Encryption"]
+      }
+    }
+  },
+  "techstack": {
+    "badge": "Tech Stack",
+    "title": "We master the best tools.",
+    "subtitle": "We use modern and proven technologies to build robust and scalable solutions.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "database": "Databases",
+      "devops": "DevOps",
+      "automation": "Automation",
+      "ai": "AI & Agents"
+    }
+  },
+  "portfolio": {
+    "badge": "Our Work",
+    "title": "Featured projects.",
+    "subtitle": "A selection of our most impactful work across industries and technologies.",
+    "caseStudy": "Case Study",
+    "viewCaseStudy": "View Case Study",
+    "metrics": {
+      "users": "Users",
+      "uptime": "Uptime",
+      "reduction": "Reduction",
+      "downloads": "Downloads",
+      "transactions": "Transactions",
+      "rating": "Rating",
+      "predictions": "Predictions",
+      "latency": "Latency",
+      "teams": "Teams",
+      "revenue": "Revenue",
+      "conversion": "Conversion",
+      "countries": "Countries",
+      "consultations": "Consultations",
+      "doctors": "Doctors",
+      "satisfaction": "Satisfaction"
+    },
+    "projects": {
+      "ecologistics": {
+        "category": "SaaS Platform",
+        "title": "EcoLogistics Pro",
+        "description": "A comprehensive fleet management and route optimization platform that reduced carbon emissions by 40% for logistics companies across Latin America.",
+        "metrics": {
+          "users": "15,000+",
+          "uptime": "99.9%",
+          "reduction": "40% CO2"
+        },
+        "tech": ["Next.js", "Node.js", "PostgreSQL", "AWS"]
+      },
+      "greenpay": {
+        "category": "Mobile App",
+        "title": "GreenPay",
+        "description": "A sustainable fintech app that rewards users for eco-friendly purchases. Features include carbon footprint tracking and local business discovery.",
+        "metrics": {
+          "downloads": "250K+",
+          "transactions": "$12M+",
+          "rating": "4.9"
+        },
+        "tech": ["React Native", "Firebase", "Stripe", "Plaid"]
+      },
+      "neuralflow": {
+        "category": "Enterprise Dashboard",
+        "title": "NeuralFlow AI",
+        "description": "Real-time ML model monitoring and visualization dashboard for data science teams. Processes millions of predictions daily with sub-second latency.",
+        "metrics": {
+          "predictions": "50M/day",
+          "latency": "<100ms",
+          "teams": "200+"
+        },
+        "tech": ["React", "Python", "TensorFlow", "Kafka"]
+      },
+      "posh": {
+        "category": "E-commerce",
+        "title": "Posh de Chiapas",
+        "description": "Premium e-commerce experience for artisanal mezcal. Features AR bottle preview, subscription management, and international shipping.",
+        "metrics": {
+          "revenue": "+340%",
+          "conversion": "4.2%",
+          "countries": "32"
+        },
+        "tech": ["Next.js", "Shopify", "Three.js", "Stripe"]
+      },
+      "mediconnect": {
+        "category": "Healthcare Platform",
+        "title": "MediConnect",
+        "description": "Telemedicine platform connecting patients with healthcare providers. Includes video consultations, electronic prescriptions, and health record management.",
+        "metrics": {
+          "consultations": "100K+",
+          "doctors": "2,500",
+          "satisfaction": "98%"
+        },
+        "tech": ["Next.js", "Go", "PostgreSQL", "LiveKit"]
+      }
+    }
+  },
+  "process": {
+    "badge": "How We Work",
+    "title": "From idea to launch.",
+    "description": "Our proven process ensures every project is delivered on time, on budget, and exceeds expectations. We've refined this approach over 150+ successful projects.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "duration": "1-2 weeks",
+        "description": "We dive deep into your requirements, understanding your business goals, target users, and technical constraints. This phase includes stakeholder interviews, market analysis, and technical feasibility assessment."
+      },
+      "design": {
+        "title": "Design",
+        "duration": "2-4 weeks",
+        "description": "Our design team creates intuitive interfaces and user experiences. We iterate through wireframes, prototypes, and visual designs until every interaction feels natural and every pixel is intentional."
+      },
+      "development": {
+        "title": "Development",
+        "duration": "4-12 weeks",
+        "description": "Our engineers write clean, tested, and maintainable code. We work in agile sprints with regular demos, ensuring you're always in the loop and can provide feedback as we build."
+      },
+      "launch": {
+        "title": "Launch",
+        "duration": "1-2 weeks",
+        "description": "We handle deployment to production with zero-downtime strategies. Includes comprehensive documentation, team training, and a dedicated support period to ensure a smooth transition."
+      }
+    }
+  },
+  "team": {
+    "label": "Our Team",
+    "title": {
+      "prefix": "The people behind",
+      "suffix": "the code."
+    },
+    "description": "A diverse team of engineers, designers, and strategists united by a passion for building exceptional products.",
+    "members": {
+      "alejandro": {
+        "name": "Alejandro García",
+        "role": "Founder & CEO",
+        "bio": "Ex-Google engineer with 12+ years in software architecture. Led teams building products used by millions."
+      },
+      "maria": {
+        "name": "María Fernanda López",
+        "role": "CTO",
+        "bio": "MIT graduate specialized in distributed systems. Previously at AWS building scalable infrastructure."
+      },
+      "carlos": {
+        "name": "Carlos Hernández",
+        "role": "Head of Design",
+        "bio": "Award-winning designer from IDEO. Expert in creating intuitive, beautiful user experiences."
+      },
+      "isabella": {
+        "name": "Isabella Martínez",
+        "role": "Lead AI Engineer",
+        "bio": "PhD in Machine Learning from Stanford. Pioneering AI solutions for enterprise applications."
+      },
+      "diego": {
+        "name": "Diego Ramírez",
+        "role": "Senior Full-Stack Developer",
+        "bio": "Full-stack expert with 8 years building production applications. TypeScript evangelist."
+      },
+      "sofia": {
+        "name": "Sofía Chen",
+        "role": "Mobile Lead",
+        "bio": "Former Apple engineer. Expert in iOS, Android, and cross-platform development with Flutter & React Native."
+      }
+    }
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title": {
+      "prefix": "What our clients",
+      "suffix": "say."
+    },
+    "items": {
+      "roberto": {
+        "quote": "GreenAlgorithm transformed our outdated systems into a modern, scalable platform. Their attention to detail and commitment to quality is unmatched.",
+        "author": "Roberto Sánchez",
+        "role": "CTO, EcoLogistics Mexico",
+        "company": "EcoLogistics"
+      },
+      "carolina": {
+        "quote": "Working with GreenAlgorithm felt like having an extension of our own team. They understood our vision from day one.",
+        "author": "Carolina Mendez",
+        "role": "Founder & CEO, GreenPay",
+        "company": "GreenPay"
+      },
+      "james": {
+        "quote": "The AI dashboard they built for us has become indispensable. Our data scientists can now monitor and debug models in real-time.",
+        "author": "Dr. James Chen",
+        "role": "Head of ML, DataCorp",
+        "company": "DataCorp"
+      },
+      "gabriel": {
+        "quote": "They didn't just build us an e-commerce site — they created an experience. Our conversion rate jumped 340%.",
+        "author": "Gabriel Ortiz",
+        "role": "Director, Posh de Chiapas",
+        "company": "Posh de Chiapas"
+      },
+      "patricia": {
+        "quote": "GreenAlgorithm's automation solutions saved us 40 hours per week in manual processes. ROI was positive within the first month.",
+        "author": "Patricia Vega",
+        "role": "Operations Director, InnovateLabs",
+        "company": "InnovateLabs"
+      }
+    }
+  },
+  "cta": {
+    "title": {
+      "line1": "Let's build something",
+      "line2": "extraordinary."
+    },
+    "description": "Ready to transform your idea into a world-class digital product? Let's talk.",
+    "primary": "Start Your Project",
+    "secondary": "Contact Us"
+  },
+  "contact": {
+    "badge": "Get In Touch",
+    "title": "Start your project.",
+    "description": "Tell us about your project and we'll get back to you within 24 hours with a detailed proposal.",
+    "info": {
+      "email": {
+        "label": "Email",
+        "value": "hello@greenalgorithm.dev"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+52 (961) 234-5678"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Tuxtla Gutiérrez, Chiapas, México"
+      }
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "budget": "Budget Range",
+      "budgetPlaceholder": "Select budget",
+      "budgetOptions": {
+        "5k-15k": "$5,000 - $15,000",
+        "15k-50k": "$15,000 - $50,000",
+        "50k-100k": "$50,000 - $100,000",
+        "100k+": "$100,000+"
+      },
+      "message": "Project Details",
+      "messagePlaceholder": "Tell us about your project, goals, and timeline...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": {
+        "title": "Message sent!",
+        "description": "Thanks for reaching out. We'll get back to you within 24 hours."
+      }
+    },
+    "required": "Required"
+  },
+  "footer": {
+    "description": "Premium software development studio. We build digital products that people love.",
+    "columns": {
+      "services": "Services",
+      "company": "Company",
+      "resources": "Resources"
+    },
+    "links": {
+      "services": {
+        "web": "Web Development",
+        "mobile": "Mobile Apps",
+        "ai": "AI & Machine Learning",
+        "cloud": "Cloud & DevOps"
+      },
+      "company": {
+        "about": "About Us",
+        "team": "Our Team",
+        "careers": "Careers",
+        "blog": "Blog"
+      },
+      "resources": {
+        "cases": "Case Studies",
+        "docs": "Documentation",
+        "support": "Support",
+        "privacy": "Privacy Policy"
+      }
+    },
+    "copyright": "© {{year}} GreenAlgorithm. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies"
+    },
+    "madeWith": "Designed & Built with ♥ in Tuxtla Gutiérrez, Chiapas, México"
+  }
+}
