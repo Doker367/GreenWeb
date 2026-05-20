@@ -4,7 +4,9 @@
     "work": "Work",
     "about": "About",
     "contact": "Contact",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "home": "Home",
+    "blog": "Blog"
   },
   "hero": {
     "badge": "Software Development Studio · Since 2019",
@@ -81,6 +83,31 @@
         "title": "Innovation",
         "description": "We stay at the cutting edge of technology, leveraging AI and modern frameworks to solve complex problems."
       }
+    },
+    "timeline": {
+      "title": "Our Story",
+      "items": {
+        "0": {
+          "year": "2019",
+          "title": "Founded",
+          "description": "GreenAlgorithm was born in Tuxtla Gutierrez, Chiapas, as a software development studio focused on high-quality web solutions."
+        },
+        "1": {
+          "year": "2020",
+          "title": "First Mobile App",
+          "description": "We launched our first cross-platform mobile projects, expanding into Flutter and React Native to serve clients across Latin America."
+        },
+        "2": {
+          "year": "2022",
+          "title": "Expansion & AI",
+          "description": "We incorporated artificial intelligence and machine learning into our services, building automation and predictive analytics solutions for businesses."
+        },
+        "3": {
+          "year": "2024",
+          "title": "Global Growth",
+          "description": "We reached over 150 delivered projects, with clients in 12 countries and a world-class team of engineers, designers, and strategists."
+        }
+      }
     }
   },
   "services": {
@@ -90,42 +117,167 @@
       "suffix": "results."
     },
     "description": "End-to-end software development from ideation to deployment and beyond.",
+    "details": {
+      "includes": "What's included",
+      "deliverables": "Deliverables",
+      "technologies": "Technologies"
+    },
     "items": {
       "web": {
         "title": "Web Development",
         "subtitle": "High-performance applications",
         "description": "Custom web applications built with React, Next.js, and modern cloud infrastructure. Optimized for speed, SEO, and scale.",
-        "features": ["SaaS Platforms", "E-commerce", "Dashboards", "Landing Pages"]
+        "features": [
+          "SaaS Platforms",
+          "E-commerce",
+          "Dashboards",
+          "Landing Pages"
+        ],
+        "includes": [
+          "SPA & SSR Applications",
+          "SaaS Platforms",
+          "Custom E-commerce",
+          "Dashboards & Admin Panels",
+          "REST & GraphQL APIs",
+          "SEO Optimization"
+        ],
+        "deliverables": [
+          "Complete source code",
+          "Technical documentation",
+          "Production environment",
+          "User manual",
+          "Team training"
+        ]
       },
       "mobile": {
         "title": "Mobile Apps",
         "subtitle": "iOS & Android native",
         "description": "Beautiful, performant mobile experiences. We build native iOS, Android, and cross-platform apps with Flutter and React Native.",
-        "features": ["Native iOS", "Native Android", "Cross-platform", "Wearables"]
+        "features": [
+          "Native iOS",
+          "Native Android",
+          "Cross-platform",
+          "Wearables"
+        ],
+        "includes": [
+          "Native iOS & Android",
+          "Cross-platform apps",
+          "Push notifications",
+          "Payment integration",
+          "Offline-first",
+          "Store publishing"
+        ],
+        "deliverables": [
+          "Source code",
+          "Signed APKs/IPAs",
+          "API documentation",
+          "Publishing guide",
+          "Post-launch support"
+        ]
       },
       "ai": {
         "title": "AI & Machine Learning",
         "subtitle": "Intelligent solutions",
         "description": "Custom AI models, LLM integrations, and intelligent automation. We make AI practical for your business.",
-        "features": ["LLM Integration", "Computer Vision", "NLP", "Predictive Analytics"]
+        "features": [
+          "LLM Integration",
+          "Computer Vision",
+          "NLP",
+          "Predictive Analytics"
+        ],
+        "includes": [
+          "Custom ML Models",
+          "LLM Integration",
+          "Intelligent Chatbots",
+          "Computer Vision",
+          "Natural Language Processing",
+          "Predictive Analytics"
+        ],
+        "deliverables": [
+          "Trained model",
+          "Model API",
+          "Technical documentation",
+          "Data pipeline",
+          "Monitoring dashboard"
+        ]
       },
       "cloud": {
         "title": "Cloud & DevOps",
         "subtitle": "Scalable infrastructure",
         "description": "AWS, GCP, and Azure architecture. CI/CD pipelines, container orchestration, and 24/7 monitoring.",
-        "features": ["AWS/GCP/Azure", "Kubernetes", "CI/CD", "Monitoring"]
+        "features": [
+          "AWS/GCP/Azure",
+          "Kubernetes",
+          "CI/CD",
+          "Monitoring"
+        ],
+        "includes": [
+          "Cloud Architecture",
+          "CI/CD Pipelines",
+          "Docker/K8s Containers",
+          "24/7 Monitoring",
+          "Auto-scaling",
+          "Disaster Recovery"
+        ],
+        "deliverables": [
+          "Infrastructure as code",
+          "Configured pipeline",
+          "Architecture documentation",
+          "Operational runbooks",
+          "Active monitoring"
+        ]
       },
       "automation": {
         "title": "Process Automation",
         "subtitle": "Workflow Efficiency",
         "description": "Streamline your operations with intelligent automation. Connect tools, automate workflows, and eliminate repetitive tasks with n8n.",
-        "features": ["Complex Workflows", "API Integration", "Webhooks", "Synchronization"]
+        "features": [
+          "Complex Workflows",
+          "API Integration",
+          "Webhooks",
+          "Synchronization"
+        ],
+        "includes": [
+          "Automated Workflows",
+          "API Integration",
+          "Webhooks & Events",
+          "Data Synchronization",
+          "Automated Reports",
+          "Business Processes"
+        ],
+        "deliverables": [
+          "Configured flows",
+          "Integration documentation",
+          "Monitoring dashboard",
+          "Operations manual",
+          "Training"
+        ]
       },
       "security": {
         "title": "Cybersecurity",
         "subtitle": "Protection & Compliance",
         "description": "Security audits, penetration testing, and compliance implementation. Protect your digital assets and customer data.",
-        "features": ["Security Audits", "Penetration Testing", "Compliance", "Encryption"]
+        "features": [
+          "Security Audits",
+          "Penetration Testing",
+          "Compliance",
+          "Encryption"
+        ],
+        "includes": [
+          "Security Audits",
+          "Penetration Testing",
+          "Vulnerability Analysis",
+          "Compliance",
+          "Data Encryption",
+          "Threat Monitoring"
+        ],
+        "deliverables": [
+          "Audit report",
+          "Remediation plan",
+          "Security policies",
+          "Compliance documentation",
+          "Team training"
+        ]
       }
     }
   },
@@ -167,38 +319,53 @@
       "satisfaction": "Satisfaction"
     },
     "projects": {
-      "ecologistics": {
-        "category": "SaaS Platform",
-        "title": "EcoLogistics Pro",
-        "description": "A comprehensive fleet management and route optimization platform that reduced carbon emissions by 40% for logistics companies across Latin America.",
+      "manybox": {
+        "category": "Shipping Platform",
+        "title": "ManyBox Web",
+        "description": "Shipping label sales platform with full-control admin panel. Complete package management with internal tracking and DHL integration for real-time shipment tracking.",
         "metrics": {
-          "users": "15,000+",
+          "users": "5,000+",
           "uptime": "99.9%",
-          "reduction": "40% CO2"
+          "countries": "32"
         },
-        "tech": ["Next.js", "Node.js", "PostgreSQL", "AWS"]
+        "tech": [
+          "Next.js",
+          "Node.js",
+          "PostgreSQL",
+          "DHL API"
+        ]
       },
-      "greenpay": {
-        "category": "Mobile App",
-        "title": "GreenPay",
-        "description": "A sustainable fintech app that rewards users for eco-friendly purchases. Features include carbon footprint tracking and local business discovery.",
+      "sistemacontable": {
+        "category": "Accounting System",
+        "title": "AI Accounting System",
+        "description": "Intelligent accounting system with AI integrations for automated invoicing, bank reconciliation, automatic expense classification, and predictive financial report generation.",
         "metrics": {
-          "downloads": "250K+",
-          "transactions": "$12M+",
-          "rating": "4.9"
+          "users": "3,000+",
+          "uptime": "99.9%",
+          "reduction": "60% time"
         },
-        "tech": ["React Native", "Firebase", "Stripe", "Plaid"]
+        "tech": [
+          "Next.js",
+          "Node.js",
+          "PostgreSQL",
+          "OpenAI"
+        ]
       },
-      "neuralflow": {
-        "category": "Enterprise Dashboard",
-        "title": "NeuralFlow AI",
-        "description": "Real-time ML model monitoring and visualization dashboard for data science teams. Processes millions of predictions daily with sub-second latency.",
+      "greenpos": {
+        "category": "Multiplatform App",
+        "title": "GreenPOS",
+        "description": "Multiplatform point of sale application for restaurants. Order management, tables, real-time inventory, electronic invoicing, and detailed sales reports from any device.",
         "metrics": {
-          "predictions": "50M/day",
-          "latency": "<100ms",
-          "teams": "200+"
+          "users": "500+",
+          "uptime": "99.9%",
+          "countries": "3"
         },
-        "tech": ["React", "Python", "TensorFlow", "Kafka"]
+        "tech": [
+          "Flutter",
+          "Node.js",
+          "PostgreSQL",
+          "Firebase"
+        ]
       },
       "posh": {
         "category": "E-commerce",
@@ -209,7 +376,12 @@
           "conversion": "4.2%",
           "countries": "32"
         },
-        "tech": ["Next.js", "Shopify", "Three.js", "Stripe"]
+        "tech": [
+          "Next.js",
+          "Shopify",
+          "Three.js",
+          "Stripe"
+        ]
       },
       "mediconnect": {
         "category": "Healthcare Platform",
@@ -220,7 +392,12 @@
           "doctors": "2,500",
           "satisfaction": "98%"
         },
-        "tech": ["Next.js", "Go", "PostgreSQL", "LiveKit"]
+        "tech": [
+          "Next.js",
+          "Go",
+          "PostgreSQL",
+          "LiveKit"
+        ]
       }
     }
   },
@@ -330,6 +507,45 @@
       }
     }
   },
+  "faq": {
+    "label": "FAQ",
+    "title": "Common questions, clear answers.",
+    "subtitle": "Everything you need to know about working with GreenAlgorithm.",
+    "items": {
+      "q1": {
+        "question": "How long does a typical project take?",
+        "answer": "It varies by complexity. A simple website can take 2-4 weeks, a mobile app 2-4 months, and a full SaaS platform 4-6 months. We provide a detailed timeline during the discovery phase."
+      },
+      "q2": {
+        "question": "Do you offer post-launch support?",
+        "answer": "Yes. We offer several maintenance packages that include security updates, bug fixes, 24/7 monitoring, and minor feature additions. Our team is available to ensure your software runs smoothly."
+      },
+      "q3": {
+        "question": "Do I own the code?",
+        "answer": "Absolutely. Once the project is paid for, you own 100% of the source code and intellectual property. We deliver all code, documentation, and assets upon handoff."
+      },
+      "q4": {
+        "question": "What technologies do you use?",
+        "answer": "We're stack-agnostic but specialize in modern tools: React, Next.js, Node.js, Python, Flutter, Go, and more. We choose the best technology for each project based on specific requirements."
+      },
+      "q5": {
+        "question": "What is the work process like?",
+        "answer": "We follow an agile methodology with 4 phases: Discovery (understand your business), Design (create the visual experience), Development (build the product in 2-week sprints), and Launch (deployment with dedicated support)."
+      },
+      "q6": {
+        "question": "Can you work with my existing team?",
+        "answer": "Yes. We integrate seamlessly with existing teams using tools like Slack, Jira, GitHub, and daily standups. We can act as an extension of your team or lead the project entirely."
+      },
+      "q7": {
+        "question": "What is the typical budget range?",
+        "answer": "Projects range from $5,000 USD for landing pages and MVPs to $100,000+ USD for complex enterprise platforms. We provide a detailed, transparent budget after the free discovery phase."
+      },
+      "q8": {
+        "question": "Do you work with startups or only enterprises?",
+        "answer": "We work with both. From early-stage startups needing an MVP to established companies seeking digital transformation. We adapt our process and budget to each client's size and needs."
+      }
+    }
+  },
   "cta": {
     "title": {
       "line1": "Let's build something",
@@ -388,7 +604,8 @@
     "columns": {
       "services": "Services",
       "company": "Company",
-      "resources": "Resources"
+      "resources": "Resources",
+      "legal": "Legal"
     },
     "links": {
       "services": {
@@ -417,5 +634,130 @@
       "cookies": "Cookies"
     },
     "madeWith": "Designed & Built with ♥ in Tuxtla Gutiérrez, Chiapas, México"
+  },
+  "workPage": {
+    "back": "Back to home",
+    "badge": "Our Work",
+    "title": "Projects that drive real impact.",
+    "subtitle": "Every project is a digital transformation story. Explore how we have helped businesses achieve their goals.",
+    "visitSite": "Visit site"
+  },
+  "servicesPage": {
+    "back": "Back to home",
+    "badge": "Our Services",
+    "title": "Solutions that drive your business.",
+    "subtitle": "Explore each of our services in detail. Modern technologies, proven processes, and measurable results.",
+    "ctaTitle": "Ready to start your project?",
+    "ctaSubtitle": "Let's talk about how we can help you achieve your technology goals.",
+    "ctaButton": "Start a project"
+  },
+  "aboutPage": {
+    "back": "Back to home",
+    "badge": "About Us",
+    "title": "Engineering excellence.",
+    "description1": "Founded in 2019 in Tuxtla Gutierrez, Mexico, GreenAlgorithm has grown from a small development studio into a premium software consultancy serving clients across the Americas.",
+    "description2": "Our team of engineers, designers, and strategists work together to create digital experiences that feel effortless, perform flawlessly, and scale without limits.",
+    "valuesTitle": "Our Values"
+  },
+  "blogPage": {
+    "back": "Back to home",
+    "badge": "Blog",
+    "title": "Ideas that inspire.",
+    "subtitle": "Articles about cybersecurity, artificial intelligence, and software development to keep you at the technological forefront.",
+    "categories": {
+      "all": "All",
+      "cybersecurity": "Cybersecurity",
+      "ai": "Artificial Intelligence",
+      "development": "Development"
+    },
+    "articles": {
+      "cybersecurity1": {
+        "title": "Protect your business: 10 cybersecurity threats in 2025",
+        "excerpt": "Cyber threats are constantly evolving. Learn the 10 most critical threats businesses face this year and how to protect yourself.",
+        "content": "From ransomware attacks to sophisticated AI-powered phishing, cyber threats are more complex than ever. In this article we analyze the most dangerous trends of 2025, including supply chain attacks, deepfakes for corporate deception, and cloud infrastructure vulnerabilities. We also cover proactive defense strategies: Zero Trust implementation, 24/7 AI monitoring, and incident response plans.",
+        "date": "Jan 15, 2025",
+        "readTime": "8 min read"
+      },
+      "ai1": {
+        "title": "Generative AI in enterprise: A practical implementation guide",
+        "excerpt": "How to integrate generative AI models into business processes securely, efficiently, and with measurable ROI.",
+        "content": "Generative AI is transforming how businesses operate. From customer service automation with intelligent chatbots to content generation and predictive analytics. In this guide we cover: model selection (GPT, Claude, Llama), fine-tuning for specific cases, RAG architectures for enterprise data, and security and privacy best practices. We include real implementation cases with ROI metrics.",
+        "date": "Feb 28, 2025",
+        "readTime": "12 min read"
+      },
+      "dev1": {
+        "title": "Next.js 15 vs pure React: When to choose each",
+        "excerpt": "We analyze the advantages and disadvantages of Next.js vs pure React for different types of enterprise projects.",
+        "content": "Choosing the right framework can make or break a project. Next.js 15 brings Server Components, streaming, and significant performance improvements. But it's not always the best option. We analyze when to use Next.js (e-commerce, SaaS, SEO-critical sites) vs pure React with Vite (internal dashboards, single-page apps, rapid prototypes). We include performance benchmarks, development complexity, and infrastructure costs.",
+        "date": "Mar 10, 2025",
+        "readTime": "10 min read"
+      },
+      "cybersecurity2": {
+        "title": "Zero Trust Architecture: Step-by-step implementation",
+        "excerpt": "Complete guide to migrating your infrastructure to a Zero Trust model without disrupting business operations.",
+        "content": "The traditional perimeter security model is no longer enough. Zero Trust assumes no connection is secure by default, verifying every access in real time. We cover the 5 implementation phases: current access audit, network segmentation, multi-factor authentication, micro-segmentation, and continuous monitoring. We include recommended tools and time estimates for businesses of different sizes.",
+        "date": "Apr 5, 2025",
+        "readTime": "15 min read"
+      },
+      "ai2": {
+        "title": "Intelligent automation: How n8n and AI transform operations",
+        "excerpt": "Discover how to combine automated workflows with artificial intelligence to eliminate repetitive tasks and reduce errors.",
+        "content": "The combination of n8n with AI models opens a world of possibilities for business automation. From automatic document processing to intelligent email classification and personalized report generation. We show 5 real workflows we implemented for clients: onboarding automation, invoice processing with OCR + AI, social media monitoring with sentiment analysis, and intelligent CRM synchronization.",
+        "date": "Apr 20, 2025",
+        "readTime": "9 min read"
+      },
+      "dev2": {
+        "title": "Flutter 4.0: The future of cross-platform development",
+        "excerpt": "We analyze the new features of Flutter 4.0 and why it's the best option for enterprise apps in 2025.",
+        "content": "Flutter 4.0 introduces significant performance improvements, new native capabilities, and better platform integration. We analyze the new on-device AI APIs, Impeller rendering engine improvements, better macOS and Windows support, and new testing tools. We compare Flutter with React Native and Kotlin Multiplatform in terms of productivity, performance, and ecosystem for enterprise projects.",
+        "date": "May 1, 2025",
+        "readTime": "11 min read"
+      },
+      "cybersecurity3": {
+        "title": "Ransomware in 2025: How to protect your critical infrastructure",
+        "excerpt": "Ransomware attacks are more sophisticated than ever. We analyze new attacker tactics and the most effective defense strategies.",
+        "content": "Ransomware has evolved from simple encryption to triple extortion operations: encryption, data leak threats, and simultaneous DDoS attacks. We analyze new variants like BlackCat and LockBit 4.0, their main entry vectors (vulnerable VPNs, exposed RDP, AI-powered phishing), and the multi-layered defense strategies every company must implement: immutable backups, network segmentation, AI-powered EDR, and tested response plans.",
+        "date": "May 12, 2025",
+        "readTime": "10 min read"
+      },
+      "ai3": {
+        "title": "RAG vs Fine-tuning: When to use each approach for your enterprise chatbot",
+        "excerpt": "Not all AI chatbots are the same. Discover when to use Retrieval-Augmented Generation versus direct fine-tuning.",
+        "content": "Building an intelligent enterprise chatbot requires choosing the right architecture. RAG (Retrieval-Augmented Generation) is ideal when you need answers based on up-to-date documents and a dynamic knowledge base. Fine-tuning shines when you need a specific response style or highly specialized domain. We compare costs, latency, accuracy, and real use cases: customer service, technical support, legal assistant, and financial analysis. Includes reference architecture with LangChain and LlamaIndex.",
+        "date": "May 18, 2025",
+        "readTime": "13 min read"
+      },
+      "dev3": {
+        "title": "Go vs Rust vs Node.js: The definitive backend for startups in 2025",
+        "excerpt": "We compare the three most popular backends for startups: performance, productivity, ecosystem, and development cost.",
+        "content": "Choosing the right backend language is critical for a startup. Go offers native concurrency and simple deployment (single binary). Rust delivers maximum performance and memory safety without garbage collector. Node.js dominates in npm ecosystem and development speed. We do real benchmarks: HTTP throughput, API latency, memory consumption, and development time for common features (auth, CRUD, websockets, queues). Includes recommendations by startup type and budget.",
+        "date": "May 25, 2025",
+        "readTime": "14 min read"
+      },
+      "cybersecurity4": {
+        "title": "AI-automated security audits: The new era",
+        "excerpt": "AI is transforming security audits. Discover how to automate vulnerability detection and reduce response times.",
+        "content": "Traditional security audits take weeks. With AI, we can scan entire codebases in hours identifying vulnerability patterns that human analysts would overlook. We cover tools like Snyk with AI, SonarQube with machine learning, and custom solutions with LLMs for code analysis. We show how to implement a CI/CD pipeline with automatic security scanning, report generation, and intelligent fix prioritization based on real risk.",
+        "date": "Jun 2, 2025",
+        "readTime": "11 min read"
+      },
+      "ai4": {
+        "title": "Autonomous AI agents: Building systems that think for themselves",
+        "excerpt": "AI agents are revolutionizing automation. Learn to build autonomous agents with tools, memory, and planning capabilities.",
+        "content": "Beyond chatbots, AI agents can execute complex tasks autonomously: web research, API usage, code writing and execution, and decision-making based on objectives. We cover frameworks like CrewAI, AutoGen, and LangGraph. We show 3 real implementations: market research agent, level 2 technical support agent, and data analysis agent with report generation. We discuss current limitations, security best practices, and costs.",
+        "date": "Jun 8, 2025",
+        "readTime": "15 min read"
+      },
+      "dev4": {
+        "title": "PostgreSQL vs MongoDB vs Redis: The definitive database guide for 2025",
+        "excerpt": "Choosing the right database can define your project's success. We compare the most popular options with real use cases.",
+        "content": "The database is the foundation of every application. PostgreSQL dominates in relational data with JSON support, full-text search, and extensions like pgvector for AI. MongoDB is ideal for flexible documents and rapid prototyping. Redis shines as cache, session store, and real-time. We analyze when to use each, hybrid usage patterns (PostgreSQL + Redis, MongoDB + PostgreSQL), migrations between them, and infrastructure costs on AWS and GCP. Includes performance benchmarks for CRUD operations, complex queries, and aggregations.",
+        "date": "Jun 15, 2025",
+        "readTime": "12 min read"
+      }
+    },
+    "liveNews": "Live News",
+    "ourArticles": "Our Articles",
+    "history": "News History"
   }
 }

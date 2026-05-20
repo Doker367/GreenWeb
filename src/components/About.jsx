@@ -54,9 +54,9 @@ function About() {
   ]
 
   return (
-    <section id="about" ref={containerRef} className="py-32 relative overflow-hidden bg-[#0A0A0A]">
+    <section id="about" ref={containerRef} className="py-20 sm:py-32 relative overflow-hidden bg-[#0A0A0A]">
       <div className="section-container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-32 items-center mb-12 sm:mb-24">
           
           <FadeInView direction="up" duration={0.8}>
             <span className="text-[#0071E3] font-semibold tracking-wide uppercase text-sm mb-4 block">
@@ -101,6 +101,39 @@ function About() {
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#0071E3]/10 rounded-3xl blur-2xl" />
           </motion.div>
         </div>
+
+        <FadeInView>
+          <div className="border-t border-white/[0.06] pt-20 mb-20">
+            <h3 className="text-[2rem] sm:text-[2.5rem] font-semibold tracking-tight text-white mb-16 text-center">
+              {t('about.timeline.title')}
+            </h3>
+            <div className="relative">
+              <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#0071E3] via-[#0071E3]/50 to-transparent hidden md:block" />
+              <div className="space-y-12">
+                {[0, 1, 2, 3].map((i) => {
+                  const isLeft = i % 2 === 0
+                  return (
+                    <FadeInView key={i} delay={i * 0.15}>
+                      <div className={`flex flex-col md:flex-row items-center gap-6 ${isLeft ? '' : 'md:flex-row-reverse'}`}>
+                        <div className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'}`}>
+                          <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.04] inline-block">
+                            <div className="text-[#0071E3] font-semibold mb-2">{t(`about.timeline.items.${i}.year`)}</div>
+                            <h4 className="text-lg font-semibold text-white mb-2">{t(`about.timeline.items.${i}.title`)}</h4>
+                            <p className="text-sm text-[#86868B] leading-relaxed">{t(`about.timeline.items.${i}.description`)}</p>
+                          </div>
+                        </div>
+                        <div className="hidden md:flex w-10 h-10 rounded-full bg-[#0071E3] items-center justify-center text-white font-semibold text-sm shrink-0 z-10">
+                          {i + 1}
+                        </div>
+                        <div className="flex-1" />
+                      </div>
+                    </FadeInView>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </FadeInView>
 
         <div className="border-t border-white/[0.06] pt-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

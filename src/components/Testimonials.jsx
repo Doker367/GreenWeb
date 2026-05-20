@@ -71,7 +71,7 @@ function Testimonials() {
   }
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#0A0A0A] relative overflow-hidden">
+    <section ref={containerRef} className="py-20 sm:py-32 bg-[#0A0A0A] relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px]" />
       </div>

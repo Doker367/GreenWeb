@@ -4,7 +4,9 @@
     "work": "Trabajo",
     "about": "Nosotros",
     "contact": "Contacto",
-    "getStarted": "Comenzar"
+    "getStarted": "Comenzar",
+    "home": "Inicio",
+    "blog": "Blog"
   },
   "hero": {
     "badge": "Estudio de Desarrollo de Software · Desde 2019",
@@ -81,6 +83,31 @@
         "title": "Innovación",
         "description": "Nos mantenemos a la vanguardia, aprovechando IA y tecnologías modernas para resolver problemas complejos."
       }
+    },
+    "timeline": {
+      "title": "Nuestra Historia",
+      "items": {
+        "0": {
+          "year": "2019",
+          "title": "Fundacion",
+          "description": "GreenAlgorithm nace en Tuxtla Gutierrez, Chiapas, como un estudio de desarrollo de software enfocado en soluciones web de alta calidad."
+        },
+        "1": {
+          "year": "2020",
+          "title": "Primera App Movil",
+          "description": "Lanzamos nuestros primeros proyectos moviles multiplataforma, expandiendonos a Flutter y React Native para servir clientes en toda America Latina."
+        },
+        "2": {
+          "year": "2022",
+          "title": "Expansion e IA",
+          "description": "Incorporamos inteligencia artificial y machine learning a nuestros servicios, construyendo soluciones de automatizacion y analisis predictivo para empresas."
+        },
+        "3": {
+          "year": "2024",
+          "title": "Crecimiento Global",
+          "description": "Alcanzamos mas de 150 proyectos entregados, con clientes en 12 paises y un equipo de ingenieros, disenadores y estrategas de clase mundial."
+        }
+      }
     }
   },
   "services": {
@@ -90,42 +117,167 @@
       "suffix": "resultados."
     },
     "description": "Desarrollo de software de extremo a extremo, desde la ideación hasta el despliegue y más allá.",
+    "details": {
+      "includes": "Que incluye",
+      "deliverables": "Entregables",
+      "technologies": "Tecnologias"
+    },
     "items": {
       "web": {
         "title": "Desarrollo Web",
         "subtitle": "Aplicaciones de alto rendimiento",
         "description": "Aplicaciones web personalizadas construidas con React, Next.js e infraestructura cloud moderna. Optimizadas para velocidad, SEO y escalabilidad.",
-        "features": ["Plataformas SaaS", "E-commerce", "Dashboards", "Landing Pages"]
+        "features": [
+          "Plataformas SaaS",
+          "E-commerce",
+          "Dashboards",
+          "Landing Pages"
+        ],
+        "includes": [
+          "Aplicaciones SPA y SSR",
+          "Plataformas SaaS",
+          "E-commerce personalizado",
+          "Dashboards y paneles admin",
+          "APIs REST y GraphQL",
+          "Optimizacion SEO"
+        ],
+        "deliverables": [
+          "Codigo fuente completo",
+          "Documentacion tecnica",
+          "Ambiente de produccion",
+          "Manual de usuario",
+          "Capacitacion al equipo"
+        ]
       },
       "mobile": {
         "title": "Apps Móviles",
         "subtitle": "iOS y Android nativos",
         "description": "Experiencias móviles hermosas y de alto rendimiento. Construimos apps nativas iOS, Android y multiplataforma con Flutter y React Native.",
-        "features": ["iOS Nativo", "Android Nativo", "Multiplataforma", "Wearables"]
+        "features": [
+          "iOS Nativo",
+          "Android Nativo",
+          "Multiplataforma",
+          "Wearables"
+        ],
+        "includes": [
+          "Apps iOS y Android nativas",
+          "Apps multiplataforma",
+          "Push notifications",
+          "Integracion de pagos",
+          "Offline-first",
+          "Publicacion en stores"
+        ],
+        "deliverables": [
+          "Codigo fuente",
+          "APKs/IPAs firmados",
+          "Documentacion de API",
+          "Guia de publicacion",
+          "Soporte post-launch"
+        ]
       },
       "ai": {
         "title": "IA y Machine Learning",
         "subtitle": "Soluciones inteligentes",
         "description": "Modelos de IA personalizados, integraciones de LLM y automatización inteligente. Hacemos la IA práctica para tu negocio.",
-        "features": ["Integración LLM", "Visión por Computadora", "NLP", "Analítica Predictiva"]
+        "features": [
+          "Integración LLM",
+          "Visión por Computadora",
+          "NLP",
+          "Analítica Predictiva"
+        ],
+        "includes": [
+          "Modelos de ML personalizados",
+          "Integracion de LLMs",
+          "Chatbots inteligentes",
+          "Vision por computadora",
+          "Procesamiento de lenguaje natural",
+          "Analitica predictiva"
+        ],
+        "deliverables": [
+          "Modelo entrenado",
+          "API del modelo",
+          "Documentacion tecnica",
+          "Pipeline de datos",
+          "Dashboard de monitoreo"
+        ]
       },
       "cloud": {
         "title": "Cloud y DevOps",
         "subtitle": "Infraestructura escalable",
         "description": "Arquitectura en AWS, GCP y Azure. Pipelines CI/CD, orquestación de contenedores y monitoreo 24/7.",
-        "features": ["AWS/GCP/Azure", "Kubernetes", "CI/CD", "Monitoreo"]
+        "features": [
+          "AWS/GCP/Azure",
+          "Kubernetes",
+          "CI/CD",
+          "Monitoreo"
+        ],
+        "includes": [
+          "Arquitectura cloud",
+          "Pipelines CI/CD",
+          "Contenedores Docker/K8s",
+          "Monitoreo 24/7",
+          "Escalado automatico",
+          "Recuperacion de desastres"
+        ],
+        "deliverables": [
+          "Infraestructura como codigo",
+          "Pipeline configurado",
+          "Documentacion de arquitectura",
+          "Runbooks operativos",
+          "Monitoreo activo"
+        ]
       },
       "automation": {
         "title": "Automatización de Procesos",
         "subtitle": "Workflows eficientes",
         "description": "Optimizamos tus procesos de negocio conectando herramientas y automatizando tareas repetitivas con n8n.",
-        "features": ["Workflows Complejos", "Integración APIs", "Webhooks", "Sincronización"]
+        "features": [
+          "Workflows Complejos",
+          "Integración APIs",
+          "Webhooks",
+          "Sincronización"
+        ],
+        "includes": [
+          "Workflows automatizados",
+          "Integracion de APIs",
+          "Webhooks y eventos",
+          "Sincronizacion de datos",
+          "Reportes automaticos",
+          "Procesos de negocio"
+        ],
+        "deliverables": [
+          "Flujos configurados",
+          "Documentacion de integracion",
+          "Panel de monitoreo",
+          "Manual de operacion",
+          "Capacitacion"
+        ]
       },
       "security": {
         "title": "Ciberseguridad",
         "subtitle": "Protección y cumplimiento",
         "description": "Auditorías de seguridad, pruebas de penetración e implementación de cumplimiento. Protegemos tus activos digitales.",
-        "features": ["Auditorías de Seguridad", "Pruebas de Penetración", "Cumplimiento", "Encriptación"]
+        "features": [
+          "Auditorías de Seguridad",
+          "Pruebas de Penetración",
+          "Cumplimiento",
+          "Encriptación"
+        ],
+        "includes": [
+          "Auditorias de seguridad",
+          "Pruebas de penetracion",
+          "Analisis de vulnerabilidades",
+          "Cumplimiento normativo",
+          "Encriptacion de datos",
+          "Monitoreo de amenazas"
+        ],
+        "deliverables": [
+          "Reporte de auditoria",
+          "Plan de remediacion",
+          "Politicas de seguridad",
+          "Documentacion de cumplimiento",
+          "Capacitacion al equipo"
+        ]
       }
     }
   },
@@ -167,38 +319,53 @@
       "satisfaction": "Satisfacción"
     },
     "projects": {
-      "ecologistics": {
-        "category": "Plataforma SaaS",
-        "title": "EcoLogistics Pro",
-        "description": "Plataforma integral de gestión de flotas y optimización de rutas que redujo las emisiones de CO2 en un 40% para empresas logísticas en toda Latinoamérica.",
+      "manybox": {
+        "category": "Plataforma de Envíos",
+        "title": "ManyBox Web",
+        "description": "Plataforma para venta de guías de paquetería con panel de administración de control total. Gestión completa de cada paquete con rastreos internos e integración con DHL para seguimiento en tiempo real.",
         "metrics": {
-          "users": "15,000+",
+          "users": "5,000+",
           "uptime": "99.9%",
-          "reduction": "40% CO2"
+          "countries": "32"
         },
-        "tech": ["Next.js", "Node.js", "PostgreSQL", "AWS"]
+        "tech": [
+          "Next.js",
+          "Node.js",
+          "PostgreSQL",
+          "API DHL"
+        ]
       },
-      "greenpay": {
-        "category": "App Móvil",
-        "title": "GreenPay",
-        "description": "App fintech sostenible que premia a los usuarios por compras ecológicas. Incluye seguimiento de huella de carbono y descubrimiento de negocios locales.",
+      "sistemacontable": {
+        "category": "Sistema Contable",
+        "title": "Sistema Contable IA",
+        "description": "Sistema contable inteligente con integraciones de inteligencia artificial para automatización de facturación, conciliación bancaria, clasificación automática de gastos y generación de reportes financieros predictivos.",
         "metrics": {
-          "downloads": "250K+",
-          "transactions": "$12M+",
-          "rating": "4.9"
+          "users": "3,000+",
+          "uptime": "99.9%",
+          "reduction": "60% tiempo"
         },
-        "tech": ["React Native", "Firebase", "Stripe", "Plaid"]
+        "tech": [
+          "Next.js",
+          "Node.js",
+          "PostgreSQL",
+          "OpenAI"
+        ]
       },
-      "neuralflow": {
-        "category": "Dashboard Empresarial",
-        "title": "NeuralFlow AI",
-        "description": "Dashboard de monitoreo y visualización de modelos ML en tiempo real para equipos de ciencia de datos. Procesa millones de predicciones diarias con latencia sub-segundo.",
+      "greenpos": {
+        "category": "App Multiplataforma",
+        "title": "GreenPOS",
+        "description": "Aplicación multiplataforma de punto de venta para restaurantes. Gestión de órdenes, mesas, inventario en tiempo real, facturación electrónica y reportes detallados de ventas desde cualquier dispositivo.",
         "metrics": {
-          "predictions": "50M/día",
-          "latency": "<100ms",
-          "teams": "200+"
+          "users": "500+",
+          "uptime": "99.9%",
+          "countries": "3"
         },
-        "tech": ["React", "Python", "TensorFlow", "Kafka"]
+        "tech": [
+          "Flutter",
+          "Node.js",
+          "PostgreSQL",
+          "Firebase"
+        ]
       },
       "posh": {
         "category": "E-commerce",
@@ -209,7 +376,12 @@
           "conversion": "4.2%",
           "countries": "32"
         },
-        "tech": ["Next.js", "Shopify", "Three.js", "Stripe"]
+        "tech": [
+          "Next.js",
+          "Shopify",
+          "Three.js",
+          "Stripe"
+        ]
       },
       "mediconnect": {
         "category": "Plataforma de Salud",
@@ -220,7 +392,12 @@
           "doctors": "2,500",
           "satisfaction": "98%"
         },
-        "tech": ["Next.js", "Go", "PostgreSQL", "LiveKit"]
+        "tech": [
+          "Next.js",
+          "Go",
+          "PostgreSQL",
+          "LiveKit"
+        ]
       }
     }
   },
@@ -330,6 +507,45 @@
       }
     }
   },
+  "faq": {
+    "label": "Preguntas Frecuentes",
+    "title": "Resolvemos tus dudas.",
+    "subtitle": "Todo lo que necesitas saber sobre trabajar con GreenAlgorithm.",
+    "items": {
+      "q1": {
+        "question": "Cuanto tiempo toma un proyecto tipico?",
+        "answer": "Varia segun la complejidad. Un sitio web simple puede tomar 2-4 semanas, una aplicacion movil 2-4 meses, y una plataforma SaaS completa 4-6 meses. Proporcionamos un cronograma detallado durante la fase de descubrimiento."
+      },
+      "q2": {
+        "question": "Ofrecen soporte despues del lanzamiento?",
+        "answer": "Si. Ofrecemos varios paquetes de mantenimiento que incluyen actualizaciones de seguridad, correcciones de errores, monitoreo 24/7 y adiciones de funciones menores. Nuestro equipo esta disponible para asegurar que tu software funcione sin problemas."
+      },
+      "q3": {
+        "question": "Soy dueno del codigo?",
+        "answer": "Absolutamente. Una vez que el proyecto esta pagado, eres dueno del 100% del codigo fuente y la propiedad intelectual. Entregamos todo el codigo, documentacion y activos al momento de la entrega."
+      },
+      "q4": {
+        "question": "Que tecnologias usan?",
+        "answer": "Somos agnosticos en cuanto a stack pero nos especializamos en herramientas modernas: React, Next.js, Node.js, Python, Flutter, Go, y mas. Elegimos la mejor tecnologia para cada proyecto segun sus requerimientos especificos."
+      },
+      "q5": {
+        "question": "Como es el proceso de trabajo?",
+        "answer": "Seguimos una metodologia agil con 4 fases: Descubrimiento (entendemos tu negocio), Diseno (creamos la experiencia visual), Desarrollo (construimos el producto en sprints de 2 semanas), y Lanzamiento (despliegue con soporte dedicado)."
+      },
+      "q6": {
+        "question": "Pueden trabajar con mi equipo existente?",
+        "answer": "Si. Nos integramos perfectamente con equipos existentes usando herramientas como Slack, Jira, GitHub y reuniones diarias. Podemos actuar como extension de tu equipo o liderar el proyecto completo."
+      },
+      "q7": {
+        "question": "Cual es el rango de presupuesto tipico?",
+        "answer": "Los proyectos van desde $5,000 USD para landing pages y MVPs hasta $100,000+ USD para plataformas empresariales complejas. Ofrecemos un presupuesto detallado y transparente despues de la fase de descubrimiento sin costo."
+      },
+      "q8": {
+        "question": "Trabajan con startups o solo empresas?",
+        "answer": "Trabajamos con ambos. Desde startups en etapa temprana que necesitan un MVP hasta empresas establecidas que buscan transformacion digital. Adaptamos nuestro proceso y presupuesto al tamano y necesidades de cada cliente."
+      }
+    }
+  },
   "cta": {
     "title": {
       "line1": "Construyamos algo",
@@ -393,7 +609,8 @@
     "columns": {
       "services": "Servicios",
       "company": "Empresa",
-      "resources": "Recursos"
+      "resources": "Recursos",
+      "legal": "Legal"
     },
     "links": {
       "services": {
@@ -422,5 +639,130 @@
       "cookies": "Cookies"
     },
     "madeWith": "Diseñado y construido con ♥ en Tuxtla Gutiérrez, Chiapas, México"
+  },
+  "workPage": {
+    "back": "Volver al inicio",
+    "badge": "Nuestro Trabajo",
+    "title": "Proyectos que generan impacto real.",
+    "subtitle": "Cada proyecto es una historia de transformacion digital. Explora como hemos ayudado a empresas a alcanzar sus objetivos.",
+    "visitSite": "Visitar sitio"
+  },
+  "servicesPage": {
+    "back": "Volver al inicio",
+    "badge": "Nuestros Servicios",
+    "title": "Soluciones que impulsan tu negocio.",
+    "subtitle": "Conoce en detalle cada uno de nuestros servicios. Tecnologias modernas, procesos probados y resultados medibles.",
+    "ctaTitle": "¿Listo para comenzar tu proyecto?",
+    "ctaSubtitle": "Platiquemos sobre como podemos ayudarte a alcanzar tus objetivos tecnologicos.",
+    "ctaButton": "Iniciar un proyecto"
+  },
+  "aboutPage": {
+    "back": "Volver al inicio",
+    "badge": "Sobre Nosotros",
+    "title": "Ingenieria de excelencia.",
+    "description1": "Fundada en 2019 en Tuxtla Gutierrez, Mexico, GreenAlgorithm ha crecido de un pequeno estudio de desarrollo a una consultora de software premium que atiende clientes en toda America.",
+    "description2": "Nuestro equipo de ingenieros, disenadores y estrategas trabajan juntos para crear experiencias digitales que se sienten naturales, funcionan impecablemente y escalan sin limites.",
+    "valuesTitle": "Nuestros Valores"
+  },
+  "blogPage": {
+    "back": "Volver al inicio",
+    "badge": "Blog",
+    "title": "Ideas que inspiran.",
+    "subtitle": "Articulos sobre ciberseguridad, inteligencia artificial y desarrollo de software para mantenerte a la vanguardia tecnologica.",
+    "categories": {
+      "all": "Todos",
+      "cybersecurity": "Ciberseguridad",
+      "ai": "Inteligencia Artificial",
+      "development": "Desarrollo"
+    },
+    "articles": {
+      "cybersecurity1": {
+        "title": "Protege tu negocio: 10 amenazas de ciberseguridad en 2025",
+        "excerpt": "Las amenazas cibernéticas evolucionan constantemente. Conoce las 10 amenazas más críticas que enfrentan las empresas este año y cómo protegerte.",
+        "content": "Desde ataques de ransomware hasta phishing sofisticado con IA, las amenazas cibernéticas son más complejas que nunca. En este artículo analizamos las tendencias más peligrosas de 2025, incluyendo ataques a cadenas de suministro, deepfakes para engaño corporativo, y vulnerabilidades en infraestructuras cloud. También cubrimos estrategias de defensa proactiva: implementación de Zero Trust, monitoreo 24/7 con IA, y planes de respuesta a incidentes.",
+        "date": "15 Ene 2025",
+        "readTime": "8 min de lectura"
+      },
+      "ai1": {
+        "title": "IA generativa en la empresa: Guia practica de implementacion",
+        "excerpt": "Como integrar modelos de IA generativa en los procesos de negocio de manera segura, eficiente y con ROI medible.",
+        "content": "La IA generativa está transformando cómo las empresas operan. Desde automatización de atención al cliente con chatbots inteligentes hasta generación de contenido y análisis predictivo. En esta guía cubrimos: selección de modelos (GPT, Claude, Llama), fine-tuning para casos específicos, arquitecturas RAG para datos empresariales, y mejores prácticas de seguridad y privacidad. Incluimos casos reales de implementación con métricas de ROI.",
+        "date": "28 Feb 2025",
+        "readTime": "12 min de lectura"
+      },
+      "dev1": {
+        "title": "Next.js 15 vs React puro: Cuando elegir cada uno",
+        "excerpt": "Analizamos las ventajas y desventajas de Next.js frente a React puro para diferentes tipos de proyectos empresariales.",
+        "content": "Elegir el framework correcto puede hacer o deshacer un proyecto. Next.js 15 trae Server Components, streaming y mejoras de rendimiento significativas. Pero no siempre es la mejor opción. Analizamos cuándo usar Next.js (e-commerce, SaaS, sitios con SEO crítico) vs React puro con Vite (dashboards internos, apps de una sola página, prototipos rápidos). Incluimos benchmarks de rendimiento, complejidad de desarrollo y costos de infraestructura.",
+        "date": "10 Mar 2025",
+        "readTime": "10 min de lectura"
+      },
+      "cybersecurity2": {
+        "title": "Zero Trust Architecture: Implementacion paso a paso",
+        "excerpt": "Guia completa para migrar tu infraestructura a un modelo Zero Trust sin interrumpir las operaciones del negocio.",
+        "content": "El modelo de seguridad perimetral tradicional ya no es suficiente. Zero Trust asume que ninguna conexión es segura por defecto, verificando cada acceso en tiempo real. Cubrimos las 5 fases de implementación: auditoría de acceso actual, segmentación de red, autenticación multifactor, micro-segmentación, y monitoreo continuo. Incluimos herramientas recomendadas y estimaciones de tiempo para empresas de diferente tamaño.",
+        "date": "5 Abr 2025",
+        "readTime": "15 min de lectura"
+      },
+      "ai2": {
+        "title": "Automatizacion inteligente: Como n8n y IA transforman operaciones",
+        "excerpt": "Descubre como combinar workflows automatizados con inteligencia artificial para eliminar tareas repetitivas y reducir errores.",
+        "content": "La combinación de n8n con modelos de IA abre un mundo de posibilidades para automatización empresarial. Desde procesamiento automático de documentos hasta clasificación inteligente de emails y generación de reportes personalizados. Mostramos 5 workflows reales que implementamos para clientes: automatización de onboarding, procesamiento de facturas con OCR + IA, monitoreo de redes sociales con análisis de sentimiento, y sincronización inteligente de CRMs.",
+        "date": "20 Abr 2025",
+        "readTime": "9 min de lectura"
+      },
+      "dev2": {
+        "title": "Flutter 4.0: El futuro del desarrollo multiplataforma",
+        "excerpt": "Analizamos las nuevas caracteristicas de Flutter 4.0 y por que es la mejor opcion para apps empresariales en 2025.",
+        "content": "Flutter 4.0 introduce mejoras significativas en rendimiento, nuevas capacidades nativas y mejor integración con plataformas. Analizamos las nuevas APIs de IA on-device, mejoras en Impeller rendering engine, soporte mejorado para macOS y Windows, y las nuevas herramientas de testing. Comparamos Flutter con React Native y Kotlin Multiplatform en términos de productividad, rendimiento y ecosistema para proyectos empresariales.",
+        "date": "1 May 2025",
+        "readTime": "11 min de lectura"
+      },
+      "cybersecurity3": {
+        "title": "Ransomware en 2025: Como proteger tu infraestructura critica",
+        "excerpt": "Los ataques de ransomware son mas sofisticados que nunca. Analizamos las nuevas tacticas de los atacantes y las estrategias de defensa mas efectivas.",
+        "content": "El ransomware ha evolucionado de simples encriptaciones a operaciones de triple extorsion: encriptacion, amenaza de filtracion de datos y ataques DDoS simultaneos. Analizamos las nuevas variantes como BlackCat y LockBit 4.0, sus vectores de entrada principales (VPN vulnerables, RDP expuesto, phishing con IA), y las estrategias de defensa multicapa que toda empresa debe implementar: copias de seguridad inmutables, segmentacion de red, EDR con IA, y planes de respuesta probados.",
+        "date": "12 May 2025",
+        "readTime": "10 min de lectura"
+      },
+      "ai3": {
+        "title": "RAG vs Fine-tuning: Cuando usar cada enfoque para tu chatbot empresarial",
+        "excerpt": "No todos los chatbots de IA son iguales. Descubre cuando usar Retrieval-Augmented Generation y cuando fine-tuning directo.",
+        "content": "Construir un chatbot empresarial inteligente requiere elegir la arquitectura correcta. RAG (Retrieval-Augmented Generation) es ideal cuando necesitas respuestas basadas en documentos actualizados y base de conocimiento dinamica. Fine-tuning brilla cuando necesitas un estilo de respuesta especifico o dominio muy especializado. Comparamos costos, latencia, precision y casos de uso reales: atencion al cliente, soporte tecnico, asistente legal y analisis financiero. Incluimos arquitectura de referencia con LangChain y LlamaIndex.",
+        "date": "18 May 2025",
+        "readTime": "13 min de lectura"
+      },
+      "dev3": {
+        "title": "Go vs Rust vs Node.js: El backend definitivo para startups en 2025",
+        "excerpt": "Comparamos los tres backends mas populares para startups: rendimiento, productividad, ecosistema y costo de desarrollo.",
+        "content": "Elegir el lenguaje backend correcto es critico para una startup. Go ofrece concurrencia nativa y despliegue simple (binario unico). Rust brinda rendimiento maximo y seguridad de memoria sin garbage collector. Node.js domina en ecosistema npm y velocidad de desarrollo. Hacemos benchmarks reales: throughput HTTP, latencia de API, consumo de memoria, y tiempo de desarrollo de features comunes (auth, CRUD, websockets, queues). Incluimos recomendaciones por tipo de startup y presupuesto.",
+        "date": "25 May 2025",
+        "readTime": "14 min de lectura"
+      },
+      "cybersecurity4": {
+        "title": "Auditorias de seguridad automatizadas con IA: La nueva era",
+        "excerpt": "La IA esta transformando las auditorias de seguridad. Descubre como automatizar la deteccion de vulnerabilidades y reducir tiempos de respuesta.",
+        "content": "Las auditorias de seguridad tradicionales toman semanas. Con IA, podemos escanear codebases enteras en horas identificando patrones de vulnerabilidades que los analistas humanos pasarian por alto. Cubrimos herramientas como Snyk con IA, SonarQube con machine learning, y soluciones custom con LLMs para analisis de codigo. Mostramos como implementar un pipeline CI/CD con escaneo automatico de seguridad, generacion de reportes y priorizacion inteligente de fixes basada en riesgo real.",
+        "date": "2 Jun 2025",
+        "readTime": "11 min de lectura"
+      },
+      "ai4": {
+        "title": "Agentes de IA autonomos: Construyendo sistemas que piensan por si mismos",
+        "excerpt": "Los agentes de IA estan revolucionando la automatizacion. Aprende a construir agentes autonomos con herramientas, memoria y planificacion.",
+        "content": "Mas alla de los chatbots, los agentes de IA pueden ejecutar tareas complejas de forma autonoma: investigar en web, usar APIs, escribir y ejecutar codigo, y tomar decisiones basadas en objetivos. Cubrimos frameworks como CrewAI, AutoGen y LangGraph. Mostramos 3 implementaciones reales: agente de investigacion de mercado, agente de soporte tecnico nivel 2, y agente de analisis de datos con generacion de reportes. Discutimos limitaciones actuales, mejores practicas de seguridad y costos.",
+        "date": "8 Jun 2025",
+        "readTime": "15 min de lectura"
+      },
+      "dev4": {
+        "title": "PostgreSQL vs MongoDB vs Redis: Guia definitiva de bases de datos para 2025",
+        "excerpt": "Elegir la base de datos correcta puede definir el exito de tu proyecto. Comparamos las opciones mas populares con casos de uso reales.",
+        "content": "La base de datos es la base de toda aplicacion. PostgreSQL domina en datos relacionales con soporte JSON, full-text search y extensiones como pgvector para IA. MongoDB es ideal para documentos flexibles y prototipado rapido. Redis brilla como cache, session store y real-time. Analizamos cuando usar cada una, patrones de uso hibridos (PostgreSQL + Redis, MongoDB + PostgreSQL), migraciones entre ellas, y costos de infraestructura en AWS y GCP. Incluimos benchmarks de rendimiento para operaciones CRUD, queries complejas y agregaciones.",
+        "date": "15 Jun 2025",
+        "readTime": "12 min de lectura"
+      }
+    },
+    "liveNews": "Noticias en vivo",
+    "ourArticles": "Nuestros articulos",
+    "history": "Historial de noticias"
   }
 }
