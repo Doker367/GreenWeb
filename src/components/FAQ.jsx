@@ -1,49 +1,46 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import FadeInView from './FadeInView'
 
-const faqs = [
-  {
-    question: "¿Cuánto tiempo toma un proyecto típico?",
-    answer: "Varía según la complejidad. Un sitio web simple puede tomar 2-4 semanas, mientras que una aplicación móvil compleja o una plataforma SaaS podría tomar 3-6 meses. Proporcionamos un cronograma detallado durante la fase de descubrimiento."
-  },
-  {
-    question: "¿Ofrecen soporte después del lanzamiento?",
-    answer: "Sí. Ofrecemos varios paquetes de mantenimiento que incluyen actualizaciones de seguridad, correcciones de errores y adiciones de funciones menores para mantener tu software funcionando sin problemas."
-  },
-  {
-    question: "¿Soy dueño del código?",
-    answer: "Absolutamente. Una vez que el proyecto está pagado, eres dueño del 100% del código fuente y la propiedad intelectual. Entregamos todo al momento de la entrega."
-  },
-  {
-    question: "¿Qué tecnologías usan?",
-    answer: "Somos agnósticos en cuanto a stack pero nos especializamos en herramientas modernas como React, Next.js, Node.js, Python y Flutter. Elegimos la mejor herramienta para tus requisitos específicos."
-  },
-]
-
 function FAQ() {
+  const { t } = useTranslation()
   const [openIndex, setOpenIndex] = useState(null)
+  const faqKeys = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']
 
   return (
-    <section id="faq" className="section-padding bg-black relative border-t border-white/5">
+    <section id="faq" className="py-20 sm:py-32 bg-black relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 opacity-[0.015]" 
+          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '36px 36px' }} />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#0071E3]/5 rounded-full blur-[120px]" />
+      </div>
+
       <div className="section-container max-w-4xl relative z-10">
         <div className="text-center mb-16">
           <FadeInView>
-            <h2 className="heading-md text-white mb-4">Preguntas Frecuentes</h2>
-            <p className="text-text-muted">Todo lo que necesitas saber sobre trabajar con nosotros.</p>
+            <span className="text-[#0071E3] font-semibold tracking-wide uppercase text-sm mb-4 block">
+              {t('faq.label')}
+            </span>
+            <h2 className="text-[2.5rem] sm:text-[3.5rem] font-semibold tracking-tight text-white mb-6 leading-[1.1]">
+              {t('faq.title')}
+            </h2>
+            <p className="text-lg text-[#86868B] max-w-2xl mx-auto">
+              {t('faq.subtitle')}
+            </p>
           </FadeInView>
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <FadeInView key={index} delay={index * 0.1}>
+          {faqKeys.map((key, index) => (
+            <FadeInView key={key} delay={index * 0.08}>
               <div 
-                className="bg-surface rounded-2xl overflow-hidden border border-white/5 cursor-pointer hover:border-white/10 transition-colors"
+                className="rounded-3xl bg-white/[0.02] border border-white/[0.04] hover:bg-white/[0.04] hover:border-white/[0.08] transition-all duration-500 cursor-pointer overflow-hidden"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <div className="p-6 flex justify-between items-center">
-                  <h3 className="text-lg font-medium text-white">{faq.question}</h3>
-                  <div className={`w-6 h-6 rounded-full bg-white/5 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`}>
+                <div className="p-6 flex justify-between items-center gap-4">
+                  <h3 className="text-lg font-medium text-white">{t(`faq.items.${key}.question`)}</h3>
+                  <div className={`w-8 h-8 rounded-full bg-white/[0.04] flex items-center justify-center shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-45 bg-[#0071E3]/20' : ''}`}>
                     <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                     </svg>
@@ -55,10 +52,10 @@ function FAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <div className="px-6 pb-6 text-text-muted leading-relaxed">
-                        {faq.answer}
+                      <div className="px-6 pb-6 text-[#86868B] leading-relaxed">
+                        {t(`faq.items.${key}.answer`)}
                       </div>
                     </motion.div>
                   )}

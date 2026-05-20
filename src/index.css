@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-black text-white font-sans antialiased selection:bg-[#0071E3]/30;
+    @apply bg-black text-white antialiased selection:bg-[#0071E3]/30;
     margin: 0;
     padding: 0;
     background-color: #000000;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+    font-size: 16px;
   }
 
   html {
@@ -18,6 +25,18 @@
 
   ::selection {
     background-color: rgba(0, 113, 227, 0.3);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 450;
+    line-height: 1.75;
+    font-size: 1.0625rem;
   }
 }
 
@@ -33,21 +52,23 @@
   .glass {
     @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.06];
   }
-  
+
   .glass-dark {
     @apply bg-black/40 backdrop-blur-xl border border-white/[0.04];
   }
 
+  /* Enhanced card hover effects */
   .hover-card {
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
+
   .hover-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -12px rgba(0, 113, 227, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
   }
 
   .section-container {
@@ -57,37 +78,192 @@
   .section-padding {
     @apply py-24 sm:py-32;
   }
+
+  /* Navigation link hover effect */
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0071E3, transparent);
+    transition: width 0.4s ease, left 0.4s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* Button glow effect on hover */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    border-radius: 50%;
+  }
+
+  .btn-glow:hover::before {
+    width: 300%;
+    height: 300%;
+  }
+
+  /* Scroll reveal animation classes */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Stagger delay utilities */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  .delay-500 { transition-delay: 500ms; }
 }
 
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#0071E3] text-white font-medium text-base transition-all duration-300 hover:bg-[#0077ED] hover:scale-[1.02] active:scale-[0.98];
+    box-shadow: 0 4px 20px rgba(0, 113, 227, 0.3);
   }
-  
+
+  .btn-primary:hover {
+    box-shadow: 0 8px 30px rgba(0, 113, 227, 0.4);
+  }
+
   .btn-secondary {
     @apply inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/[0.06] text-white font-medium text-base transition-all duration-300 hover:bg-white/[0.1] border border-white/[0.06];
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
   }
 
   .input-field {
     @apply w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.06] text-white placeholder-white/30 focus:outline-none focus:border-[#0071E3]/50 transition-colors;
   }
+
+  .input-field:focus {
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+  }
+
+  /* Navbar brand text styling */
+  .nav-brand {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #0071E3, #59ACFF);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: linear-gradient(180deg, #0077ED, #6BB3FF);
+}
+
+/* Smooth scroll indicator */
+.scroll-progress {
+  background: linear-gradient(90deg, #0071E3, #59ACFF, #0071E3);
+  background-size: 200% 100%;
+  animation: scrollGradient 3s linear infinite;
+}
+
+@keyframes scrollGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {

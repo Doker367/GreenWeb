@@ -16,33 +16,28 @@ function Portfolio() {
   const projects = [
     {
       id: 1,
-      titleKey: 'ecologistics',
+      titleKey: 'manybox',
       color: '#3B82F6',
-      mockup: { type: 'dashboard' }
+      image: '/images/projects/ManyBoxWeb.png',
+      link: 'https://manyboxenviox.com/'
     },
     {
       id: 2,
-      titleKey: 'greenpay',
+      titleKey: 'sistemacontable',
       color: '#22C55E',
-      mockup: { type: 'mobile' }
+      image: '/images/projects/sistemacontable.png'
     },
     {
       id: 3,
-      titleKey: 'neuralflow',
+      titleKey: 'greenpos',
       color: '#A855F7',
-      mockup: { type: 'analytics' }
-    },
-    {
-      id: 4,
-      titleKey: 'posh',
-      color: '#EF4444',
-      mockup: { type: 'ecommerce' }
+      images: ['/images/projects/greenpos2.png', '/images/projects/greenpos.png']
     },
     {
       id: 5,
       titleKey: 'mediconnect',
       color: '#06B6D4',
-      mockup: { type: 'platform' }
+      images: ['/images/projects/medicalapp2.png', '/images/projects/medicalapp.png']
     }
   ]
 
@@ -246,6 +241,10 @@ function Portfolio() {
     const isEven = index % 2 === 0
 
     const handleViewProject = () => {
+      if (project.link) {
+        window.open(project.link, '_blank', 'noopener,noreferrer')
+        return
+      }
       const contactSection = document.getElementById('contact')
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' })
@@ -278,8 +277,18 @@ function Portfolio() {
             style={{ y: smoothY, scale: smoothScale, opacity: smoothOpacity }}
             className={`relative ${!isEven ? 'lg:[direction:ltr]' : ''}`}
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[16/10] bg-gradient-to-br from-[#1C1C1E] to-[#0A0A0A]">
-              {renderMockup(project.mockup, project.color)}
+            <div className={`relative rounded-3xl overflow-hidden ${project.image || project.images ? 'aspect-auto' : 'aspect-[16/10] bg-gradient-to-br from-[#1C1C1E] to-[#0A0A0A]'}`} style={project.image || project.images ? { boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.7)' } : {}}>
+              {project.image ? (
+                <img src={project.image} alt={data.title} className="w-full h-auto object-contain" />
+              ) : project.images ? (
+                <div className="grid grid-cols-2 gap-3">
+                  {project.images.map((img, i) => (
+                    <img key={i} src={img} alt={`${data.title} ${i + 1}`} className="w-full h-auto object-contain" />
+                  ))}
+                </div>
+              ) : (
+                renderMockup(project.mockup, project.color)
+              )}
             </div>
             <div 
               className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] blur-[80px] opacity-30"
@@ -308,7 +317,7 @@ function Portfolio() {
                 {data.description}
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
                 {Object.entries(data.metrics).map(([key, value]) => (
                   <div key={key} className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.04]">
                     <div className="text-xl font-semibold text-white mb-1">{value}</div>

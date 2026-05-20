@@ -53,7 +53,7 @@ function Process() {
   ]
 
   return (
-    <section id="process" ref={containerRef} className="py-32 bg-black relative overflow-hidden">
+    <section id="process" ref={containerRef} className="py-20 sm:py-32 bg-black relative overflow-hidden">
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 z-0"

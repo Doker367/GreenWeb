@@ -4,36 +4,36 @@ import { useTranslation } from 'react-i18next'
 import FadeInView from './FadeInView'
 
 const techLogos = {
-  React: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/react.svg",
-  'Next.js': "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/nextdotjs.svg",
-  TypeScript: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/typescript.svg",
-  Tailwind: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tailwindcss.svg",
-  Framer: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/framer.svg",
-  'Node.js': "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/nodedotjs.svg",
-  Go: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/go.svg",
-  Python: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg",
-  Java: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openjdk.svg",
-  'C#': "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/csharp.svg",
-  Rust: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/rust.svg",
-  'C/C++': "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/cplusplus.svg",
-  Flutter: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flutter.svg",
-  Kotlin: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/kotlin.svg",
-  'React Native': "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/react.svg",
-  Swift: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/swift.svg",
-  PostgreSQL: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/postgresql.svg",
-  MongoDB: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/mongodb.svg",
-  MySQL: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/mysql.svg",
-  Firebase: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/firebase.svg",
-  Redis: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/redis.svg",
-  Docker: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/docker.svg",
-  Kubernetes: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/kubernetes.svg",
-  Linux: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linux.svg",
-  Git: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/git.svg",
-  AWS: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/amazonaws.svg",
+  React: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/react/react-original.svg",
+  'Next.js': "https://cdn.jsdelivr.net/npm/devicon@latest/icons/nextjs/nextjs-original.svg",
+  TypeScript: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/typescript/typescript-original.svg",
+  Tailwind: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+  Framer: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/framer/framer-original.svg",
+  'Node.js': "https://cdn.jsdelivr.net/npm/devicon@latest/icons/nodejs/nodejs-original.svg",
+  Go: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/go/go-original-wordmark.svg",
+  Python: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/python/python-original.svg",
+  Java: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/java/java-original.svg",
+  'C#': "https://cdn.jsdelivr.net/npm/devicon@latest/icons/csharp/csharp-original.svg",
+  Rust: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/rust/rust-original.svg",
+  'C/C++': "https://cdn.jsdelivr.net/npm/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+  Flutter: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/flutter/flutter-original.svg",
+  Kotlin: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/kotlin/kotlin-original.svg",
+  'React Native': "https://cdn.jsdelivr.net/npm/devicon@latest/icons/react/react-original.svg",
+  Swift: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/swift/swift-original.svg",
+  PostgreSQL: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/postgresql/postgresql-original.svg",
+  MongoDB: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/mongodb/mongodb-original.svg",
+  MySQL: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/mysql/mysql-original.svg",
+  Firebase: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/firebase/firebase-plain.svg",
+  Redis: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/redis/redis-original.svg",
+  Docker: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/docker/docker-original.svg",
+  Kubernetes: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/kubernetes/kubernetes-plain-wordmark.svg",
+  Linux: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/linux/linux-original.svg",
+  Git: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/git/git-original.svg",
+  AWS: "https://cdn.jsdelivr.net/npm/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
   n8n: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/n8n.svg",
   Zapier: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/zapier.svg",
   OpenAI: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg",
-  'Python ML': "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pytorch.svg",
+  'Python ML': "https://cdn.jsdelivr.net/npm/devicon@latest/icons/pytorch/pytorch-original.svg",
   LangChain: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/langchain.svg",
 }
 
@@ -73,24 +73,33 @@ const allTechs = [
 
 function TechItem({ tech, isHovered }) {
   return (
-    <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 backdrop-blur-sm min-w-[140px]">
-      <img 
-        src={techLogos[tech.name]} 
-        alt={tech.name}
-        className="w-8 h-8 object-contain"
-        style={{ filter: 'brightness(0) invert(1)' }}
-        onError={(e) => {
-          e.target.style.display = 'none'
-          e.target.nextSibling.style.display = 'flex'
-        }}
-      />
-      <div 
-        className="w-8 h-8 hidden items-center justify-center rounded-lg text-sm font-bold"
-        style={{ backgroundColor: `${tech.color}30`, color: tech.color }}
-      >
-        {tech.name.charAt(0)}
+    <div className="flex items-center gap-3 px-6 py-4 rounded-2xl min-w-[140px] group relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(147, 51, 234, 0.04), rgba(88, 28, 135, 0.08))',
+        border: '1px solid rgba(147, 51, 234, 0.18)',
+        backdropFilter: 'blur(12px)',
+        boxShadow: '0 4px 20px rgba(147, 51, 234, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06)'
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-400/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative z-10">
+        <img 
+          src={techLogos[tech.name]} 
+          alt={tech.name}
+          className="w-8 h-8 object-contain"
+          style={{ filter: 'drop-shadow(0 0 3px rgba(147, 51, 234, 0.3))' }}
+          onError={(e) => {
+            e.target.style.display = 'none'
+            e.target.nextSibling.style.display = 'flex'
+          }}
+        />
+        <div 
+          className="w-8 h-8 hidden items-center justify-center text-xs font-bold text-purple-300"
+        >
+          {tech.name.charAt(0)}
+        </div>
       </div>
-      <span className="text-sm text-white/70 font-medium whitespace-nowrap">
+      <span className="text-sm text-purple-200/70 font-medium whitespace-nowrap group-hover:text-purple-100 transition-colors relative z-10">
         {tech.name}
       </span>
     </div>
@@ -135,7 +144,7 @@ function TechStack() {
   const row2 = allTechs.slice(16)
 
   return (
-    <section id="techstack" ref={containerRef} className="py-32 bg-[#0A0A0A] relative overflow-hidden">
+    <section id="techstack" ref={containerRef} className="py-20 sm:py-32 bg-[#0A0A0A] relative overflow-hidden">
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 z-0"
@@ -160,8 +169,8 @@ function TechStack() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 lg:w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 lg:w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
           
           <div 
             className="flex flex-col gap-6 overflow-hidden py-4"
@@ -169,10 +178,10 @@ function TechStack() {
             onMouseLeave={() => document.querySelectorAll('.tech-row').forEach(el => el.style.animationPlayState = 'running')}
           >
             <div className="tech-row">
-              <TechRow techs={row1} direction={1} speed={50} />
+              <TechRow techs={row1} direction={1} speed={25} />
             </div>
             <div className="tech-row">
-              <TechRow techs={row2} direction={-1} speed={60} />
+              <TechRow techs={row2} direction={-1} speed={30} />
             </div>
           </div>
         </div>

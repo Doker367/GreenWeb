@@ -104,7 +104,7 @@ function ContactSection() {
   }
 
   return (
-    <section id="contact" ref={containerRef} className="py-32 bg-black relative overflow-hidden">
+    <section id="contact" ref={containerRef} className="py-20 sm:py-32 bg-black relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[80px]" />

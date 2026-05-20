@@ -15,20 +15,21 @@ function CallToAction() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.95, 1])
 
   return (
-    <section ref={containerRef} className="py-32 bg-[#0A0A0A] relative overflow-hidden">
+    <section ref={containerRef} className="py-20 sm:py-32 bg-[#0A0A0A] relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <motion.div 
           style={{ y }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0071E3]/10 rounded-full blur-[150px]"
         />
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 opacity-[0.02]" 
+          style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
       </div>
 
       <motion.div 
         style={{ scale }}
         className="section-container relative z-10"
       >
-        <div className="max-w-4xl mx-auto text-center p-12 sm:p-16 rounded-[2rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/[0.06] relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center p-6 sm:p-12 lg:p-16 rounded-[2rem] bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/[0.06] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#0071E3]/10 rounded-full blur-3xl" />
           
           <FadeInView>
@@ -38,7 +39,7 @@ function CallToAction() {
                 {t('cta.title.line2')}
               </span>
             </h2>
-            <p className="text-xl text-[#86868B] max-w-xl mx-auto mb-10">
+            <p className="text-base sm:text-xl text-[#86868B] max-w-xl mx-auto mb-10">
               {t('cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

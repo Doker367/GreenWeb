@@ -21,13 +21,14 @@ function Stats() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
 
   return (
-    <section ref={containerRef} className="py-32 bg-black relative overflow-hidden">
+    <section ref={containerRef} className="py-20 sm:py-32 bg-black relative overflow-hidden">
       <motion.div 
         style={{ y: backgroundY }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[80px]" />
+        <div className="absolute inset-0 opacity-[0.02]" 
+          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px]" />
       </motion.div>
 
       <div className="section-container relative z-10">
@@ -36,7 +37,7 @@ function Stats() {
             <h2 className="text-[2.5rem] sm:text-[4rem] font-semibold tracking-tight text-white mb-6">
               {t('stats.title')}
             </h2>
-            <p className="text-xl text-[#86868B] max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-[#86868B] max-w-2xl mx-auto">
               {t('stats.subtitle')}
             </p>
           </FadeInView>
@@ -46,7 +47,7 @@ function Stats() {
           {stats.map((stat, index) => (
             <FadeInView key={stat.key} delay={index * 0.1}>
               <div className="text-center lg:text-left">
-                <div className="text-[3.5rem] sm:text-[4.5rem] font-semibold tracking-tight bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent mb-2">
+                <div className="text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] font-semibold tracking-tight bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
                 <div className="text-lg font-medium text-white mb-2">

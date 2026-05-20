@@ -77,8 +77,10 @@ function Team() {
   ]
 
   return (
-    <section id="team" ref={containerRef} className="py-32 bg-black relative overflow-hidden">
+    <section id="team" ref={containerRef} className="py-20 sm:py-32 bg-black relative overflow-hidden">
       <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 opacity-[0.015]" 
+          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '48px 48px' }} />
         <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px]" />
       </div>
 

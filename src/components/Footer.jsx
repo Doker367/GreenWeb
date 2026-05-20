@@ -34,12 +34,11 @@ function Footer() {
       { label: t('footer.links.company.about'), href: '#about' },
       { label: t('footer.links.company.team'), href: '#team' },
       { label: t('footer.links.company.careers'), href: '#contact' },
-      { label: t('footer.links.company.contact'), href: '#contact' },
     ],
     legal: [
-      { label: t('footer.links.legal.privacy'), href: '#' },
-      { label: t('footer.links.legal.terms'), href: '#' },
-      { label: t('footer.links.legal.cookies'), href: '#' },
+      { label: t('footer.legal.privacy'), href: '#' },
+      { label: t('footer.legal.terms'), href: '#' },
+      { label: t('footer.legal.cookies'), href: '#' },
     ],
   }
 
@@ -95,7 +94,7 @@ function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="text-white font-semibold mb-4">{t('footer.sections.services')}</h4>
+              <h4 className="text-white font-semibold mb-4">{t('footer.columns.services')}</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.label}>
@@ -115,7 +114,7 @@ function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-white font-semibold mb-4">{t('footer.sections.company')}</h4>
+              <h4 className="text-white font-semibold mb-4">{t('footer.columns.company')}</h4>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.label}>
@@ -135,7 +134,7 @@ function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-white font-semibold mb-4">{t('footer.sections.legal')}</h4>
+              <h4 className="text-white font-semibold mb-4">{t('footer.columns.legal')}</h4>
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link.label}>
@@ -155,7 +154,7 @@ function Footer() {
           </div>
           <div className="flex items-center gap-6">
             <span className="text-sm text-[#86868B]">
-              {t('footer.location')}
+              {t('footer.madeWith')}
             </span>
           </div>
         </div>

@@ -17,7 +17,7 @@ function Hero() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95])
 
   return (
-    <section ref={containerRef} className="relative min-h-[120vh] flex items-center justify-center overflow-hidden">
+    <section ref={containerRef} className="relative min-h-[100vh] sm:min-h-[110vh] lg:min-h-[120vh] flex items-center justify-center overflow-hidden">
       
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-10%] left-[20%] w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[150px] opacity-60" />
@@ -31,7 +31,7 @@ function Hero() {
 
       <motion.div 
         style={{ y, opacity, scale }}
-        className="section-container relative z-10 flex flex-col items-center text-center pt-20"
+        className="section-container relative z-10 flex flex-col items-center text-center -mt-24 sm:-mt-40 lg:-mt-52"
       >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -48,7 +48,7 @@ function Hero() {
             {t('hero.badge')}
           </motion.span>
           
-          <h1 className="text-[4rem] sm:text-[6rem] lg:text-[8rem] font-semibold leading-[0.9] tracking-[-0.03em] mb-8">
+          <h1 className="text-[3rem] sm:text-[4.5rem] lg:text-[5.5rem] font-bold leading-[0.92] tracking-[-0.03em] mb-6">
             <motion.span
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -79,7 +79,7 @@ function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="text-xl sm:text-2xl text-[#86868B] max-w-2xl mx-auto mb-12 leading-relaxed font-light"
+            className="text-base sm:text-lg text-[#86868B] max-w-2xl mx-auto mb-10 leading-relaxed font-light"
           >
             {t('hero.description')}
           </motion.p>
@@ -112,7 +112,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-20 left-1/2 -translate-x-1/2"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2"
         >
           <motion.div 
             animate={{ y: [0, 12, 0] }}
