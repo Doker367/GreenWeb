@@ -8,6 +8,7 @@ const projectColors = {
   greenpos: '#A855F7',
   posh: '#EF4444',
   mediconnect: '#06B6D4',
+  tiendaonline: '#F59E0B',
 }
 
 function WorkPage() {
@@ -39,6 +40,12 @@ function WorkPage() {
       key: 'mediconnect',
       color: projectColors.mediconnect,
       images: ['/images/projects/medicalapp2.png', '/images/projects/medicalapp.png'],
+    },
+    {
+      key: 'tiendaonline',
+      color: projectColors.tiendaonline,
+      images: ['/images/projects/tiendaonline_crop.png'],
+      isLaptop: true,
     },
   ]
 
@@ -80,11 +87,13 @@ function WorkPage() {
                   <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${!isEven ? 'lg:[direction:rtl]' : ''}`}>
                     <div className={`${!isEven ? 'lg:[direction:ltr]' : ''}`}>
                       {project.images ? (
-                        <div className={`rounded-3xl overflow-hidden ${project.images.length > 1 ? 'grid grid-cols-2 gap-4' : ''}`}
+                        <div className={`rounded-3xl overflow-hidden ${project.images.length > 1 ? 'grid grid-cols-2 gap-4' : ''} ${project.isLaptop ? 'laptop-frame' : ''}`}
                           style={{ boxShadow: `0 25px 60px -15px ${project.color}20` }}
                         >
                           {project.images.map((img, i) => (
-                            <img key={i} src={img} alt={`${data.title} ${i + 1}`} className="w-full h-auto object-contain rounded-3xl" />
+                            <div key={i} className={project.isLaptop ? 'laptop-screen' : ''}>
+                              <img src={img} alt={`${data.title} ${i + 1}`} className="w-full h-auto object-contain rounded-3xl" />
+                            </div>
                           ))}
                         </div>
                       ) : (

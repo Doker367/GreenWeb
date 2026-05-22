@@ -398,6 +398,22 @@
           "PostgreSQL",
           "LiveKit"
         ]
+      },
+      "tiendaonline": {
+        "category": "E-commerce",
+        "title": "LuxeThread",
+        "description": "Premium online clothing and fashion accessories store. Shopping cart, user management, optimized checkout process, and elegant design adapted for mobile devices.",
+        "metrics": {
+          "users": "2,000+",
+          "uptime": "99.9%",
+          "revenue": "+180%"
+        },
+        "tech": [
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "Stripe"
+        ]
       }
     }
   },

@@ -50,12 +50,11 @@ function Navbar({ currentView, onNavigate, onGoHome }) {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 w-[calc(100%-2rem)] max-w-[900px] rounded-2xl overflow-hidden ${
+        className={`fixed top-3 start-24 z-50 transition-all duration-700 w-[calc(100%-6rem)] max-w-[900px] rounded-2xl overflow-hidden ${
           isScrolled || !isHome
             ? 'bg-[#0a0a0f]/95 backdrop-blur-xl border border-white/[0.06] shadow-2xl shadow-black/50' 
             : 'bg-transparent'
         }`}
-        style={{ maxWidth: '900px' }}
       >
         {/* Gradient accent line at top */}
         <motion.div 

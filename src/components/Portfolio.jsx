@@ -34,6 +34,13 @@ function Portfolio() {
       images: ['/images/projects/greenpos2.png', '/images/projects/greenpos.png']
     },
     {
+      id: 4,
+      titleKey: 'tiendaonline',
+      color: '#F59E0B',
+      image: '/images/projects/tiendaonline_portfolio.png',
+      isLaptop: true
+    },
+    {
       id: 5,
       titleKey: 'mediconnect',
       color: '#06B6D4',
@@ -277,9 +284,11 @@ function Portfolio() {
             style={{ y: smoothY, scale: smoothScale, opacity: smoothOpacity }}
             className={`relative ${!isEven ? 'lg:[direction:ltr]' : ''}`}
           >
-            <div className={`relative rounded-3xl overflow-hidden ${project.image || project.images ? 'aspect-auto' : 'aspect-[16/10] bg-gradient-to-br from-[#1C1C1E] to-[#0A0A0A]'}`} style={project.image || project.images ? { boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.7)' } : {}}>
+            <div className={`relative rounded-3xl overflow-hidden ${project.isLaptop ? 'laptop-frame' : ''} ${project.image || project.images ? 'aspect-auto' : 'aspect-[16/10] bg-gradient-to-br from-[#1C1C1E] to-[#0A0A0A]'}`} style={project.image || project.images ? { boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.7)' } : {}}>
               {project.image ? (
-                <img src={project.image} alt={data.title} className="w-full h-auto object-contain" />
+                <div className={project.isLaptop ? 'laptop-screen' : ''}>
+                  <img src={project.image} alt={data.title} className={`w-full h-auto object-contain ${project.isLaptop ? 'rounded-none' : 'rounded-3xl'}`} />
+                </div>
               ) : project.images ? (
                 <div className="grid grid-cols-2 gap-3">
                   {project.images.map((img, i) => (
